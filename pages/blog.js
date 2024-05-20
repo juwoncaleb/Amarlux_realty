@@ -3,15 +3,21 @@ import React, { useState, useEffect } from "react";
 async function fetchdata() {
   const options = {
     headers: {
-      Authorization: `Bearer ${process.env.API_TOKEN}`,
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
     },
   };
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs`, options);
+    const res = await fetch("http://127.0.0.1:1337/api/blogs", options);
+    if (!res.ok) {
+      console.error(`Error: ${res.status} ${res.statusText}`);
+      return null;
+    }
     const response = await res.json();
+    console.log(response)
     return response;
   } catch (err) {
-    console.error(err);
+    console.error("Fetch error:", err);
+    return null;
   }
 }
 
@@ -21,6 +27,7 @@ export default function Blog() {
   useEffect(() => {
     async function getData() {
       const data = await fetchdata();
+      console.log("Fetched data:", data); // Log the data
       setBlog(data);
     }
     getData();
@@ -29,11 +36,10 @@ export default function Blog() {
   if (!blog) {
     return <div>Loading...</div>;
   }
-  console.log(blog);
 
   return (
     <div>
-     jj
+     jkj
     </div>
   );
 }
