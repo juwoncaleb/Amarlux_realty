@@ -7,7 +7,7 @@ async function fetchdata() {
     },
   };
   try {
-    const res = await fetch("http://127.0.0.1:1337/api/blogs", options);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/blogs`, options);
     if (!res.ok) {
       console.error(`Error: ${res.status} ${res.statusText}`);
       return null;
