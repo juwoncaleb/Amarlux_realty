@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
+.exclusive_listings {
+  margin-top: 150px;
+  font-size: 100px;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 85px;
+  margin-bottom: 100px;
+}
+
+.property_name {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  margin-top: 20px;
+}
+.property_location {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.prop_deb {
+  font-size: 17px;
+}
+
+.listing_details {
+  height: 80vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat; /* Prevent tiling if image is smaller */
+}
+.darken-background {
+  padding-top: 150px;
+  background-color: rgba(0, 0, 0, 0.793); /* Adjust opacity for darkness */
+  /* Optional: Set a blend mode to avoid contrast issues */
+  mix-blend-mode: multiply;
+}
+.gallery {
+  font-size: 30px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.prop_name {
+  font-size: 80px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 140px;
+  color: white;
+}
+.propert_gallery {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 80px;
+}
+.grid_images {
+  padding-top: 50px;
+  height: 400px;
+  align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat; /* Prevent tiling if image is smaller */
+  width: 400px; /* Set desired width for the div */
+}
+.eye {
+  opacity: 0;
+}
+.grid_images:hover {
+  padding-top: 50px;
+
+  height: 400px;
+  filter: brightness(0.8);
+  background-size: contain;
+  background-repeat: no-repeat; /* Prevent tiling if image is smaller */
+
+  width: 400px; /* Set desired width for the div */
+}
+.grid_images:hover .eye {
+  opacity: 1;
+}
+.prop_form {
+  background-color: black;
+  width: 500px;
+  color: white;
+  padding: 50px;
+  height: 90vh;
+  padding-bottom: 100px !important;
+}
+
+.line {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.582);
+}
+.line_2 {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border: 1px solid white;
+}
+.status_button {
+  background-color: #373737;
+  margin-top: 20px;
+  width: 140px;
+  height: 50px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+}
+.form_price {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 50px;
+  margin-top: 20px;
+}
+
+.form_input {
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  border: 1px solid white;
+  margin-top: 15px;
+  padding-left: 10px;
+}
+.form_input::placeholder {
+  margin-left: 20px;
+}
+.interest {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+}
+.call {
+  margin-top: 50px;
+  width: 200px;
+  color: black !important;
+  height: 59px;
+  background-color: white;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+}
+.prop_head {
+  font-family: "Syncopate", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+.amarachi {
+  font-size: 60px;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 85px;
+  margin-bottom: 30px;
+}

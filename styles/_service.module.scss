@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+.service_head {
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.serv_hd {
+  margin-top: 70px;
+}
+.amralux_text_head {
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+}
+.service_header {
+  font-family: "Manrope", sans-serif;
+  font-size: 25px;
+  margin-top: 50px;
+}
+.learn_more {
+  font-family: "Manrope", sans-serif;
+}
+.arrow {
+  height: 30px !important;
+  position: relative;
+  bottom: 3px;
+}
+.service_sub {
+  font-family: "Manrope", sans-serif;
+  margin-top: 10px;
+}
+.service_grid {
+  width: 600px;
+  padding: 40px;
+  height: 350px;
+  border: 1px solid rgba(0, 0, 0, 0.208);
+}
+.service_grid:hover {
+  width: 600px;
+  padding: 40px;
+  height: 350px;
+  border: 1px solid rgb(0, 0, 0);
+  transition: border-color 0.3s ease-in-out; /* Add transition properties */
+}
+.cta_div {
+  grid-column-gap: 40px;
+  padding-top: 30px;
+  grid-row-gap: 40px;
+  background-image: url(../public/sabi.jpg);
+  background-position: 50%;
+  background-size: cover;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 70px;
+  display: flex;
+  color: white;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 120px;
+}
+
+.amralux_text {
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+}
+
+.serivce_bg {
+  width: 100%;
+  margin-top: 60px;
+}
+.service_con {
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  margin-top: 25px;
+}

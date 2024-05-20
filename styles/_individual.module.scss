@@ -1,0 +1,189 @@
+.listings {
+    color: white !important;
+    background-attachment: fixed;
+    background-size: cover; /* Or adjust as needed (e.g., contain) */
+    height: 80vh; /* Or set a specific height */
+    padding-top: 27%;
+    padding-left: 10%;
+  }
+  .listings_display {
+    margin-top: 100px;
+    padding: 100px;
+  }
+  .listing_property {
+    height: 300px;
+  }
+  .property_name {
+    font-family: "Syncopate", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  .property_location {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+      margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  .prop_deb {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+  }
+  .property_price {
+    font-family: "Syncopate", sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+  }
+  .property_list_name {
+    font-family: "Syncopate", sans-serif;
+    font-size: 50px;
+    font-weight: 00;
+  }
+  .property_information {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 23px;
+  }
+  .inq_btn {
+    height: 50px;
+    width: 180px;
+    border: 1px solid black;
+    margin-top: 30px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  .inq_btn:hover {
+    background-color: black;
+    color: white;
+  }
+  .propertt_detali {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+  .line {
+    border: 1px solid rgba(0, 0, 0, 0.284);
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .properties_des_header {
+    font-family: "Syncopate", sans-serif;
+    font-size: 37px;
+  }
+  .properties_des {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px !important;
+  }
+  .share_icon {
+    height: 40px !important;
+    margin-top: 5px;
+  }
+  
+  .kum_banner {
+    height: 500px;
+    margin-right: 80px;
+  }
+  
+  .kum_title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px !important;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .kum_bio {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px !important;
+  }
+  .kum_contact_info {
+    margin-top: 160px;
+    margin-left: 80px;
+  }
+  .phone_number{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px !important;
+    font-weight: 500;
+  }
+  .cell{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px !important;
+    text-decoration: underline;
+  }
+  .other{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px !important;
+    margin-top: 30px;
+  }
+  .agent_info{
+    background-color: #f5f2ed;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+  
+  }
+  .property_page{
+    overflow: hidden;
+  }
+  
+  .carousle_img {
+    /* Set a maximum width to constrain the images */
+    max-width: 100%; /* Or a specific width in pixels */
+    
+    /* Maintain aspect ratio */
+    height: auto;
+    object-fit: cover;
+  }
+  .slick-prev,
+  .slick-next {
+    /* Increafse size or adjust padding for better visibility */
+    padding: 70px;
+    font-size: 90px; /* Adjust font size if needed */
+    background-color: red;
+    z-index: 5;
+  }
+  .carousle_img{
+    max-height: 80vh;
+  }
+  @media only screen and (max-width: 1200px) {
+  
+    .listing_property {
+      height: 200px;
+    }
+    .property_name {
+      font-family: "Syncopate", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 22px;
+      margin-top: 20px;
+    }
+    .prop_de{
+      flex-direction: column;
+    }
+  }
+  @media only screen and (max-width: 790px) {
+    .properties_des_header {
+      font-family: "Syncopate", sans-serif;
+      font-size: 30px;
+    }
+   
+    .properties_des {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 20px !important;
+    }
+    .agent_info{
+      flex-direction: column;
+    }
+    .kum_banner {
+      height: 400px;
+      width: 400px;
+      margin-right: 0px;
+    }
+    
+  }
+  @media only screen and (max-width: 500px) {
+    .property_list_name {
+      font-family: "Syncopate", sans-serif;
+      font-size: 30px;
+      font-weight: 00;
+    }
+  }

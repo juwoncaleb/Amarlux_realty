@@ -1,0 +1,711 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.head_text {
+  font-size: 100px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 140px;
+}
+
+.hero_subliminary {
+  font-size: 60px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.header_div {
+  max-width: 550px;
+}
+
+.discover_div {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.hero_text {
+  font-size: 20px;
+}
+
+.prop_btn {
+  margin-top: 35px;
+  color: white;
+  height: 70px;
+  width: 230px;
+  background-color: black;
+}
+
+.pool {
+  height: 600px;
+  border-radius: 20px;
+}
+
+.sky {
+  height: 800px;
+  width: 600px;
+}
+
+.hero_img {
+  margin-top: 70px;
+}
+
+.hero_tex {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.exclusive_listing {
+  padding-top: 100px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.exclusive_header {
+  color: white;
+  font-size: 70px;
+}
+
+.house_1 {
+  padding-left: 20%;
+}
+
+.house_2 {
+  padding-right: 20%;
+}
+
+.price_border {
+  border: 2px solid rgb(255, 255, 255);
+  height: 250px;
+  width: 370px;
+  transition: border-color 0.3s ease-in-out; /* Add transition properties */
+}
+
+.price_border:hover {
+  border: 2px solid black;
+  height: 250px;
+  width: 370px;
+}
+
+.listing_price {
+  font-size: 66px;
+}
+
+.list_des {
+  font-size: 30px;
+}
+
+.list_des_sub {
+  font-size: 20px;
+}
+
+.price_tag {
+  background-color: white;
+  height: 300px;
+  width: 420px;
+  position: relative;
+  bottom: 200px;
+  margin-right: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price_tag_2 {
+  background-color: black;
+  height: 300px;
+  color: white;
+  width: 420px;
+  position: relative;
+  bottom: 200px;
+  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iframeEmbed {
+  display: block;
+  margin: auto;
+  width: 80%;
+  max-width: 100%;
+  aspect-ratio: 1.7780429594;
+}
+
+.frame_div {
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 100px;
+}
+
+.amarlux {
+  height: 100vh;
+}
+
+.landingpage_about {
+  margin-top: 150px;
+}
+
+.amarachi_header {
+  color: black;
+  font-size: 70px;
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 20px;
+}
+
+.article {
+  color: black;
+  font-size: 40px;
+  font-family: "Cormorant Garamond", serif;
+  margin-top: 150px;
+}
+
+.abt_amara {
+  padding-top: 100px;
+  max-width: 500px;
+}
+
+.contact {
+  margin-top: 30px;
+  height: 50px;
+  width: 140px;
+  color: white;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  background-color: black;
+}
+
+.date_shade {
+  color: rgba(59, 58, 58, 0.868);
+  margin-top: 20px;
+}
+
+.blog_header {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.exclusive_listings {
+  margin-top: 150px;
+  font-size: 100px;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 85px;
+  margin-bottom: 100px;
+}
+
+.property_name {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.property_location {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.prop_deb {
+  font-size: 17px;
+}
+
+.listing_details {
+  height: 80vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat; /* Prevent tiling if image is smaller */
+}
+
+.darken-background {
+  padding-top: 150px;
+  background-color: rgba(0, 0, 0, 0.793); /* Adjust opacity for darkness */
+  /* Optional: Set a blend mode to avoid contrast issues */
+  mix-blend-mode: multiply;
+}
+
+.gallery {
+  font-size: 30px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.prop_name {
+  font-size: 80px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 140px;
+  color: white;
+}
+
+.propert_gallery {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 80px;
+}
+
+.grid_images {
+  padding-top: 50px;
+  height: 400px;
+  align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat; /* Prevent tiling if image is smaller */
+  width: 400px; /* Set desired width for the div */
+}
+
+.eye {
+  opacity: 0;
+}
+
+.grid_images:hover {
+  padding-top: 50px;
+  height: 400px;
+  filter: brightness(0.8);
+  background-size: contain;
+  background-repeat: no-repeat; /* Prevent tiling if image is smaller */
+  width: 400px; /* Set desired width for the div */
+}
+
+.grid_images:hover .eye {
+  opacity: 1;
+}
+
+.prop_form {
+  background-color: black;
+  width: 500px;
+  color: white;
+  padding: 50px;
+  height: 90vh;
+  padding-bottom: 100px !important;
+}
+
+.line {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.582);
+}
+
+.line_2 {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border: 1px solid white;
+}
+
+.status_button {
+  background-color: #373737;
+  margin-top: 20px;
+  width: 140px;
+  height: 50px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+}
+
+.form_price {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 50px;
+  margin-top: 20px;
+}
+
+.form_input {
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  border: 1px solid white;
+  margin-top: 15px;
+  padding-left: 10px;
+}
+
+.form_input::-moz-placeholder {
+  margin-left: 20px;
+}
+
+.form_input::placeholder {
+  margin-left: 20px;
+}
+
+.interest {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+}
+
+.call {
+  margin-top: 50px;
+  width: 200px;
+  color: black !important;
+  height: 59px;
+  background-color: white;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+}
+
+.prop_head {
+  font-family: "Syncopate", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.amarachi {
+  font-size: 60px;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 85px;
+  margin-bottom: 30px;
+}
+
+.service_head {
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.serv_hd {
+  margin-top: 70px;
+}
+
+.amralux_text_head {
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+}
+
+.service_header {
+  font-family: "Manrope", sans-serif;
+  font-size: 25px;
+  margin-top: 50px;
+}
+
+.learn_more {
+  font-family: "Manrope", sans-serif;
+}
+
+.arrow {
+  height: 30px !important;
+  position: relative;
+  bottom: 3px;
+}
+
+.service_sub {
+  font-family: "Manrope", sans-serif;
+  margin-top: 10px;
+}
+
+.service_grid {
+  width: 600px;
+  padding: 40px;
+  height: 350px;
+  border: 1px solid rgba(0, 0, 0, 0.208);
+}
+
+.service_grid:hover {
+  width: 600px;
+  padding: 40px;
+  height: 350px;
+  border: 1px solid rgb(0, 0, 0);
+  transition: border-color 0.3s ease-in-out; /* Add transition properties */
+}
+
+.cta_div {
+  grid-column-gap: 40px;
+  padding-top: 30px;
+  grid-row-gap: 40px;
+  background-image: url(../public/sabi.jpg);
+  background-position: 50%;
+  background-size: cover;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 70px;
+  display: flex;
+  color: white;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 120px;
+}
+
+.amralux_text {
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+}
+
+.serivce_bg {
+  width: 100%;
+  margin-top: 60px;
+}
+
+.service_con {
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  margin-top: 25px;
+}
+
+.form_feild {
+  width: 55%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.contact_img {
+  width: 45%;
+}
+
+.contact_input {
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: 60px;
+  margin-top: 15px;
+  padding-bottom: 15px;
+}
+
+.contact_input::-moz-placeholder {
+  font-size: 25px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.contact_input::placeholder {
+  font-size: 25px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.contact_input_message::-moz-placeholder {
+  font-size: 25px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.contact_input_message::placeholder {
+  font-size: 25px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.contact_input_message {
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: 170px;
+  margin-top: 15px;
+  padding-bottom: 15px;
+}
+
+.listings {
+  color: white !important;
+  background-attachment: fixed;
+  background-size: cover; /* Or adjust as needed (e.g., contain) */
+  height: 80vh; /* Or set a specific height */
+  padding-top: 27%;
+  padding-left: 10%;
+}
+
+.listings_display {
+  margin-top: 100px;
+  padding: 100px;
+}
+
+.listing_property {
+  height: 300px;
+}
+
+.property_name {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.property_location {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.prop_deb {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+}
+
+.property_price {
+  font-family: "Syncopate", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.property_list_name {
+  font-family: "Syncopate", sans-serif;
+  font-size: 50px;
+  font-weight: 0;
+}
+
+.property_information {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+}
+
+.inq_btn {
+  height: 50px;
+  width: 180px;
+  border: 1px solid black;
+  margin-top: 30px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.inq_btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.propertt_detali {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.line {
+  border: 1px solid rgba(0, 0, 0, 0.284);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.properties_des_header {
+  font-family: "Syncopate", sans-serif;
+  font-size: 37px;
+}
+
+.properties_des {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px !important;
+}
+
+.share_icon {
+  height: 40px !important;
+  margin-top: 5px;
+}
+
+.kum_banner {
+  height: 500px;
+  margin-right: 80px;
+}
+
+.kum_title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px !important;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.kum_bio {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px !important;
+}
+
+.kum_contact_info {
+  margin-top: 160px;
+  margin-left: 80px;
+}
+
+.phone_number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px !important;
+  font-weight: 500;
+}
+
+.cell {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px !important;
+  text-decoration: underline;
+}
+
+.other {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px !important;
+  margin-top: 30px;
+}
+
+.agent_info {
+  background-color: #f5f2ed;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.property_page {
+  overflow: hidden;
+}
+
+.carousle_img {
+  /* Set a maximum width to constrain the images */
+  max-width: 100%; /* Or a specific width in pixels */
+  /* Maintain aspect ratio */
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slick-prev,
+.slick-next {
+  /* Increafse size or adjust padding for better visibility */
+  padding: 70px;
+  font-size: 90px; /* Adjust font size if needed */
+  background-color: red;
+  z-index: 5;
+}
+
+.carousle_img {
+  max-height: 80vh;
+}
+
+@media only screen and (max-width: 1200px) {
+  .listing_property {
+    height: 200px;
+  }
+  .property_name {
+    font-family: "Syncopate", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+    margin-top: 20px;
+  }
+  .prop_de {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 790px) {
+  .properties_des_header {
+    font-family: "Syncopate", sans-serif;
+    font-size: 30px;
+  }
+  .properties_des {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px !important;
+  }
+  .agent_info {
+    flex-direction: column;
+  }
+  .kum_banner {
+    height: 400px;
+    width: 400px;
+    margin-right: 0px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .property_list_name {
+    font-family: "Syncopate", sans-serif;
+    font-size: 30px;
+    font-weight: 0;
+  }
+}/*# sourceMappingURL=global.css.map */
