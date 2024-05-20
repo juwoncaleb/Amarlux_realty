@@ -15,6 +15,8 @@ export default function About() {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
+
+    
   };
   return (
     <div>
