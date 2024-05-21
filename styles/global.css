@@ -223,7 +223,7 @@
 }
 
 .listing_details {
-  height: 80vh;
+  height: 50vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat; /* Prevent tiling if image is smaller */
@@ -514,7 +514,8 @@
 }
 
 .listing_property {
-  height: 300px;
+  height: 400px;
+  width: 85%;
 }
 
 .property_name {
@@ -708,4 +709,8 @@
     font-size: 30px;
     font-weight: 0;
   }
+}
+.vidj {
+  height: 500px;
+  width: 300px;
 }/*# sourceMappingURL=global.css.map */

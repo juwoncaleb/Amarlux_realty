@@ -1,0 +1,104 @@
+{
+  "kind": "collectionType",
+  "collectionName": "properties",
+  "info": {
+    "singularName": "property",
+    "pluralName": "properties",
+    "displayName": "Property",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "squareMeter": {
+      "type": "string",
+      "required": true
+    },
+    "bathroom": {
+      "type": "string",
+      "required": true
+    },
+    "bedroom": {
+      "type": "string",
+      "required": true
+    },
+    "propertyStyle": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "stories": {
+      "type": "string"
+    },
+    "garageSpace": {
+      "type": "string"
+    },
+    "securedEstate": {
+      "type": "boolean",
+      "default": true,
+      "required": true,
+      "private": true
+    },
+    "pool": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "popCeiling": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "smartHome": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "bq": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

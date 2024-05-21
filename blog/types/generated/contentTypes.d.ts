@@ -387,13 +387,68 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     Thumbnail: Attribute.Media & Attribute.Required;
     blogImages: Attribute.Media;
     blogContent: Attribute.Blocks & Attribute.Required;
-    slug: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPropertyProperty extends Schema.CollectionType {
+  collectionName: 'properties';
+  info: {
+    singularName: 'property';
+    pluralName: 'properties';
+    displayName: 'Property';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    thumbnail: Attribute.Media & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    images: Attribute.Media & Attribute.Required;
+    description: Attribute.String & Attribute.Required;
+    price: Attribute.String & Attribute.Required;
+    location: Attribute.String & Attribute.Required;
+    squareMeter: Attribute.String & Attribute.Required;
+    bathroom: Attribute.String & Attribute.Required;
+    bedroom: Attribute.String & Attribute.Required;
+    propertyStyle: Attribute.String;
+    status: Attribute.String;
+    state: Attribute.String;
+    stories: Attribute.String;
+    garageSpace: Attribute.String;
+    securedEstate: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<true>;
+    pool: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    popCeiling: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+    smartHome: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+    bq: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::property.property',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::property.property',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -835,6 +890,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::blog.blog': ApiBlogBlog;
+      'api::property.property': ApiPropertyProperty;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

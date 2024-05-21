@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['ik.imagekit.io'], // Add the hostname here
+    domains: ['127.0.0.1'], // Add the hostname here
   },
  
 }
