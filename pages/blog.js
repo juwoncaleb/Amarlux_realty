@@ -9,7 +9,7 @@ async function fetchdata() {
   };
   try {
     const res = await fetch(
-      "http://127.0.0.1:1337/api/properties?populate=*",
+      "http://127.0.0.1:1337/api/blogs?populate=*",
       options
     );
     if (!res.ok) {
@@ -25,7 +25,6 @@ async function fetchdata() {
   }
 }
 export default function Blog() {
-  const [blog, setBlog] = useState(null);
   useEffect(() => {
     const script1 = document.createElement("script");
     script1.src = "https://fast.wistia.com/embed/medias/jz1dh0ty1g.jsonp";
@@ -78,6 +77,9 @@ export default function Blog() {
       document.body.removeChild(script2);
     };
   }, []);
+
+  const [blog, setBlog] = useState(null);
+
   useEffect(() => {
     async function getData() {
       const data = await fetchdata();
@@ -90,6 +92,7 @@ export default function Blog() {
   if (!blog) {
     return <div>Loading...</div>;
   }
+  const blogData = blog.data;
 
   return (
     <div className="frame_div">
@@ -261,6 +264,41 @@ export default function Blog() {
       </center>
       <div className="frame_div">
         <p className="gallery mb-10 mt-20">BLOG POST</p>
+        <div className="grid frame_div grid-cols-1 lg:grid-cols-3 ">
+        {blogData.map((property) => {
+          const {
+            Title,
+            date,
+            price,
+            location,
+            bedroom,
+            bathroom,
+            Thumbnail,
+            squareMeter,
+          } = property.attributes;
+          const imageUrl =
+            "http://127.0.0.1:1337" +
+            blogData.attributes.Thumbnail.data.attributes.url;
+          const formattedPrice = new Intl.NumberFormat().format(price);
+
+          return (
+            <div key={property.id}>
+              <Link href={`/property/${property.id}`}>
+                <div>
+                  <img
+                    preload="true"
+                    className="listing_property"
+                    src={imageUrl}
+                    alt={Title}
+                  />
+                  <p  className="property_location">{Title}</p>
+                 
+                </div>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
       </div>
     </div>
   );
