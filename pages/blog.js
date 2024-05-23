@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 async function fetchdata() {
   const options = {
@@ -77,27 +78,27 @@ export default function Blog() {
       document.body.removeChild(script2);
     };
   }, []);
-
-  const [blog, setBlog] = useState(null);
+ const [blog, setBlog] = useState(null);
 
   useEffect(() => {
     async function getData() {
       const data = await fetchdata();
-      console.log("Fetched data:", data); // Log the data
+      console.log("Fetched data:", data);
       setBlog(data);
     }
     getData();
   }, []);
 
-  if (!blog) {
+  if (!blog || !blog.data) {
     return <div>Loading...</div>;
   }
-  const blogData = blog.data;
+  const blogPosts = blog.data;
 
   return (
     <div className="frame_div">
+      <p className="exclusive_listings text-center">MEDIA & BLOGS</p>
       <div className="frame_div">
-        <p className="gallery mb-10">VIDEO GALLERY</p>
+        <p className=" blog_head mb-10">VIDEO GALLERY</p>
 
         <div className="grid grid-cols-3 mb-20 gap-2 ">
           <div className="vidj">
@@ -263,42 +264,48 @@ export default function Blog() {
         </Link>
       </center>
       <div className="frame_div">
-        <p className="gallery mb-10 mt-20">BLOG POST</p>
-        <div className="grid frame_div grid-cols-1 lg:grid-cols-3 ">
-        {blogData.map((property) => {
-          const {
-            Title,
-            date,
-            price,
-            location,
-            bedroom,
-            bathroom,
-            Thumbnail,
-            squareMeter,
-          } = property.attributes;
-          const imageUrl =
-            "http://127.0.0.1:1337" +
-            blogData.attributes.Thumbnail.data.attributes.url;
-          const formattedPrice = new Intl.NumberFormat().format(price);
+        <p
+          className="  blog_head
+ mb-10 mt-20"
+        >
+          BLOG POST
+        </p>
+        {blogPosts.map((post, index) => (
+          <div key={index}>
+            {/* Render each blog post content here */}
+          </div>
+        ))}
+         <div className="grid frame_div grid-cols-1 gap-20 lg:grid-cols-3 ">
+          {blogPosts.map((post) => {
+            const { Title, blogContent, blogImages, Thumbnail, createdAt } =
+              post.attributes;
+            const thumbnailUrl = Thumbnail?.data?.attributes?.url
+              ? `http://127.0.0.1:1337${Thumbnail.data.attributes.url}`
+              : "";
 
-          return (
-            <div key={property.id}>
-              <Link href={`/property/${property.id}`}>
+            return (
+              <div key={post.id}>
+                
                 <div>
-                  <img
-                    preload="true"
-                    className="listing_property"
-                    src={imageUrl}
-                    alt={Title}
-                  />
-                  <p  className="property_location">{Title}</p>
-                 
-                </div>
-              </Link>
-            </div>
-          );
-        })}
-      </div>
+                    <Link href={`/blog/${post.id}`}>
+                      {thumbnailUrl && (
+                        <img
+                          preload="true"
+                          className="blog_thumbnail"
+                          src={thumbnailUrl}
+                          alt={Title}
+                        />
+                      )}
+                      <h3 className="blog_title">{Title}</h3>
+                      <p className="blog_date">
+                        {new Date(createdAt).toLocaleDateString()}
+                      </p>
+                    </Link>
+                  </div>
+              </div>
+            );
+          })}
+        </div> 
       </div>
     </div>
   );

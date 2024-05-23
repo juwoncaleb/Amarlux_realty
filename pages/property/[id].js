@@ -49,7 +49,8 @@ export default function PropertyPage() {
 
   const {bq,smartHome
 ,    popCeiling, pool, stories, title, squareMeter,status,  description, price, location, bedroom, bathroom, images, thumbnail } = property.data.attributes;
-  const formattedPrice = new Intl.NumberFormat().format(price);
+ 
+const formattedPrice = new Intl.NumberFormat().format(price);
   const thumbnailUrl = `http://127.0.0.1:1337${thumbnail.data.attributes.url}`;
 
   console.log('Thumbnail URL:', thumbnailUrl);

@@ -7,7 +7,7 @@ export default function Service() {
       <div className="frame_div">
         <p className="service_head">SERVICES</p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <Link href="./">
+          <Link href="./commercial">
             <div className="service_grid">
               <img
                 loading="eager"
@@ -32,7 +32,7 @@ export default function Service() {
               </div>
             </div>
           </Link>
-          <Link href="./">
+          <Link href="./inspection">
             <div className="service_grid">
               {" "}
               <img src="https://assets-global.website-files.com/65127446160a3ff5b1e6186c/6517a33229b7fe98f646b64e_service-02.svg" />
@@ -53,7 +53,7 @@ export default function Service() {
               </div>
             </div>
           </Link>
-          <Link href="./">
+          <Link href="./relocation">
             <div className="service_grid">
               {" "}
               <img
@@ -80,7 +80,7 @@ export default function Service() {
             </div>
           </Link>
 
-          <Link href="./">
+          <Link href="./interior">
             <div className="service_grid">
               {" "}
               <img
@@ -107,7 +107,7 @@ export default function Service() {
             </div>
           </Link>
 
-          <Link href="./">
+          <Link href="./propertyManagement">
             <div className="service_grid">
               {" "}
               <img
@@ -134,7 +134,7 @@ export default function Service() {
             </div>
           </Link>
 
-          <Link href="./">
+          <Link href="./construction">
             <div className="service_grid">
               {" "}
               <img
@@ -161,7 +161,7 @@ export default function Service() {
             </div>
           </Link>
 
-          <Link href="./">
+          <Link href="./investment">
             <div className="service_grid">
               {" "}
               <img
@@ -188,7 +188,7 @@ export default function Service() {
             </div>
           </Link>
 
-          <Link href="./">
+          <Link href="./land">
             <div className="service_grid">
               {" "}
               <img
