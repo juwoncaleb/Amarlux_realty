@@ -1,7 +1,10 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import googleOneTap from "google-one-tap";
+
 
 async function fetchData() {
+ 
   const options = {
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
@@ -26,6 +29,24 @@ async function fetchData() {
 }
 
 export default function Page() {
+  const option = {
+    client_id:
+      "982962606566-21g54u29m5t0hv88pfu4rkjppc1pniar.apps.googleusercontent.com", // required
+    auto_select: false, // optional
+    cancel_on_tap_outside: false, // optional
+    context: "signin", // optional
+  };
+
+ 
+
+  useEffect(() => {
+    googleOneTap(option, (response) => {
+      // Log the response for debugging
+      console.log("Response from Google One Tap:", response, response.credential);
+    
+    
+    });
+  }, []);
   const [property, setProperty] = useState(null);
 
   useEffect(() => {

@@ -1,62 +1,43 @@
-import React,{useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import googleOneTap from 'google-one-tap'
+import googleOneTap from "google-one-tap";
+import jwt_decode from "jwt-decode";
+import Header from "./components/Header";
 
-const opions = {
-  client_id : process.env.NEXT_PUBLIC_CLIENT_ID,
-  auto_select : false,
-  cance_on_tap_outside : false,
-  context: "signin"
-}
 
 export default function Main() {
-  let settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
+  const [userInfo, setUserInfo] = useState(null);
+
+  const options = {
+    client_id:
+      "982962606566-21g54u29m5t0hv88pfu4rkjppc1pniar.apps.googleusercontent.com", // required
+    auto_select: false, // optional
+    cancel_on_tap_outside: false, // optional
+    context: "signin", // optional
   };
-  const [loginData, setLoginData] = useState(
-    localStorage.getItem("loginData")
-      ? JSON.parse(localStorage.getItem("loginData"))
-      : null
-  );
+
+ 
+
   useEffect(() => {
-    if (!loginData) {
-      googleOneTap(options, async (response) => {
-        console.log(response);
-        const res = await fetch("/api/google-login", {
-          method: "POST",
-          body: JSON.stringify({
-            token: response.credential,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+    googleOneTap(options, (response) => {
+      // Log the response for debugging
+      console.log("Response from Google One Tap:", response, response.credential);
+   
+    
+    });
+  }, []);
 
-        const data = await res.json();
-        setLoginData(data);
-        localStorage.setItem("loginData", JSON.stringify(data));
-      });
-    }
-  }, [loginData]);
-
-  const handleLogout = () => {
-    localStorage.removeItem("loginData");
-    setLoginData(null);
-  };
-  return (
+return (
     <div>
+      <Header/>
       <div>
         <div className="discover_div">
           <div className="flex  hero_tex">
-            <p className="head_text">DISCOVER YOUR DREAM HOME</p>
+            <p className="head_text"> DISCOVER YOUR DREAM HOME</p>
+         
+            
             <div className="header_div mt-10 ">
               <div className="header_div_sub">
                 <p className="hero_text">
@@ -134,37 +115,9 @@ export default function Main() {
             </div>
           </div>
 
-          <div className="house_2">
-            <img src="./sap.jpg" />
-            <div className=" flex justify-start">
-              <div className="price_tag_2">
-                <div className="price_border">
-                  <center>
-                    <p className="listing_price">$9,500,000</p>
-                    <p className="list_des">Osapa London</p>
-                    <p className="list_des">Plot 3393</p>
-                    <p className="list_des_sub">View</p>
-                  </center>
-                </div>
-              </div>{" "}
-            </div>
-          </div>
+      
 
-          <div className="house_1">
-            <img src="./lap.jpg" />
-            <div className=" flex justify-end">
-              <div className="price_tag">
-                <div className="price_border">
-                  <center>
-                    <p className="listing_price">$8,500,000</p>
-                    <p className="list_des">Lekki Phase 1</p>
-                    <p className="list_des">Plot 2193</p>
-                    <p className="list_des_sub">View</p>
-                  </center>
-                </div>
-              </div>{" "}
-            </div>
-          </div>
+         
         </div>
 
         <div className="frame_div">
