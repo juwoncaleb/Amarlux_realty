@@ -213,6 +213,14 @@
   .eye_icon {
     height: 30px;
   }
+  .share_icon {
+    height: 40px !important;
+    margin-top: 5px;
+  }
+  .properties_des_header {
+    font-family: "Syncopate", sans-serif;
+    font-size: 26px;
+  }
 }
 
 @media only screen and (max-width: 490px) {
@@ -234,10 +242,6 @@
     width: 400px;
     margin-left: 0px;
     margin-bottom: 20px;
-  }
-  .share_icon {
-    height: 40px !important;
-    margin-top: 5px;
   }
 
   .prop_det_info {

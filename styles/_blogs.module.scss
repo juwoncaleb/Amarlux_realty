@@ -92,6 +92,13 @@
   font-size: 25px !important;
   margin-top: 30px;
 }
+.media {
+  margin-top: 150px;
+  font-size: 80px;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 85px;
+  margin-bottom: 100px;
+}
 .agent_info {
   background-color: #f5f2ed;
   padding-top: 100px;
@@ -150,11 +157,10 @@
 }
 .vidj {
   height: 500px;
-  width: 300px;
 }
 
 .blog_head {
-  font-size: 40px;
+  font-size: 35px;
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
   margin-bottom: 30px;
@@ -172,4 +178,15 @@
 .blog_date{
   margin-top: 5px;
   color: rgba(0, 0, 0, 0.558);
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .media {
+    margin-top: 150px;
+    font-size: 60px;
+    font-family: "Cormorant Garamond", serif;
+    line-height: 85px;
+    margin-bottom: 100px;
+  }
 }

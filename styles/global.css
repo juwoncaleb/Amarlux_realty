@@ -441,7 +441,7 @@
     margin-left: 0px;
     position: relative;
     left: 35px;
-    height: 400px;
+    height: 300px;
   }
   .hero_subliminary {
     font-size: 24px;
@@ -718,6 +718,14 @@
   .eye_icon {
     height: 30px;
   }
+  .share_icon {
+    height: 40px !important;
+    margin-top: 5px;
+  }
+  .properties_des_header {
+    font-family: "Syncopate", sans-serif;
+    font-size: 26px;
+  }
 }
 @media only screen and (max-width: 490px) {
   .properties_des_header {
@@ -736,10 +744,6 @@
     width: 400px;
     margin-left: 0px;
     margin-bottom: 20px;
-  }
-  .share_icon {
-    height: 40px !important;
-    margin-top: 5px;
   }
   .prop_det_info {
     margin-left: 0px;
@@ -1007,6 +1011,14 @@
   margin-top: 30px;
 }
 
+.media {
+  margin-top: 150px;
+  font-size: 80px;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 85px;
+  margin-bottom: 100px;
+}
+
 .agent_info {
   background-color: #f5f2ed;
   padding-top: 100px;
@@ -1064,11 +1076,10 @@
 }
 .vidj {
   height: 500px;
-  width: 300px;
 }
 
 .blog_head {
-  font-size: 40px;
+  font-size: 35px;
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
   margin-bottom: 30px;
@@ -1091,6 +1102,15 @@
   color: rgba(0, 0, 0, 0.558);
 }
 
+@media only screen and (max-width: 1200px) {
+  .media {
+    margin-top: 150px;
+    font-size: 60px;
+    font-family: "Cormorant Garamond", serif;
+    line-height: 85px;
+    margin-bottom: 100px;
+  }
+}
 .header_text_menu {
   margin-top: 15px;
   font-size: 70px;
@@ -1190,6 +1210,43 @@
   position: relative;
 }
 
+@media only screen and (max-width: 770px) {
+  .logo_height {
+    height: 50px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .contact_img {
+    background-image: url(../public/header_ama.jpg);
+    background-size: cover;
+    padding-top: 40%;
+    font-family: "Manrope", sans-serif;
+    color: whitesmoke;
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .header_text_menu {
+    margin-top: 15px;
+    font-size: 50px;
+    font-family: "Cormorant Garamond", serif;
+    line-height: 65px;
+    margin-bottom: 10px;
+  }
+  .yt_icon {
+    height: 50px !important;
+  }
+  .instgram_icon {
+    height: 45px !important;
+    position: relative;
+    top: 2px;
+    width: 40px;
+  }
+  .fb_icon {
+    height: 45px !important;
+    position: relative;
+  }
+}
 .footer_Div {
   background-color: black;
   padding: 100px;
@@ -1223,4 +1280,33 @@
 .foooter_add {
   font-size: 28px;
   font-family: "Cormorant Garamond", serif;
+}
+
+@media only screen and (max-width: 1200px) {
+  .footer_Div {
+    background-color: black;
+    padding: 50px;
+    margin-top: 120px;
+    color: white;
+    font-family: "Manrope", sans-serif;
+  }
+  .footer_input {
+    border: 1px solid white;
+    height: 50px;
+    width: 250px;
+    font-family: "Manrope", sans-serif;
+    padding-left: 10px;
+    background-color: black;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .footer_Div {
+    background-color: black;
+    padding: 50px;
+    margin-top: 120px;
+    color: white;
+    font-family: "Manrope", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2 2fr); /* 3 columns */
+  }
 }/*# sourceMappingURL=global.css.map */

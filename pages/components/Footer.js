@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="footer_Div flex justify-between">
+    <div className="footer_Div lg:flex grid md:grid-cols-2 grid-cols-1  gap-10 justify-between">
       
       <div>
         <img className="white_logo" src="../../wit_pn.png" />
@@ -26,7 +26,7 @@ export default function Footer() {
           <a href="tel:+2348162354848">+234-816-235-4848</a>
         </p>
         <p>
-          <a href="mailto:calebomojwo@gmail.com">calebomojwo@gmail.com</a>
+          <a href="mailto:amarluxrealty@gmail.com">Amarluxrealty@gmail.com</a>
         </p>
       </div>
       <div className="grid mt-4">

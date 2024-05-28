@@ -5,6 +5,7 @@
   color: white;
   font-family: "Manrope", sans-serif;
 }
+
 .white_logo {
   height: 70px;
   margin-bottom: 40px;
@@ -24,8 +25,36 @@
   color: black !important;
   font-family: "Manrope", sans-serif;
 }
-.foooter_add{
-    font-size: 28px;
-    font-family: "Cormorant Garamond", serif;
+.foooter_add {
+  font-size: 28px;
+  font-family: "Cormorant Garamond", serif;
+}
+@media only screen and (max-width: 1200px) {
+  .footer_Div {
+    background-color: black;
+    padding: 50px;
+    margin-top: 120px;
+    color: white;
+    font-family: "Manrope", sans-serif;
+  }
+  .footer_input {
+    border: 1px solid white;
+    height: 50px;
+    width: 250px;
+    font-family: "Manrope", sans-serif;
+    padding-left: 10px;
+    background-color: black;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .footer_Div {
+    background-color: black;
+    padding: 50px;
+    margin-top: 120px;
+    color: white;
+    font-family: "Manrope", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2 2fr); /* 3 columns */
 
+  }
 }

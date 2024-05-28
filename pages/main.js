@@ -46,7 +46,9 @@ export default function Main() {
                   cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
                   commodo diam libero vitae erat.
                 </p>
-                <button className="prop_btn">VIEW PROPERTIES</button>
+                <Link href="./listings">
+                  <button className="prop_btn">VIEW PROPERTIES</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -71,7 +73,7 @@ export default function Main() {
           </p>
 
           <div className="house_1">
-            <Link href= './property/2'>
+            <Link href="./property/2">
               <img className="property_one" src="./land.jpg" />
               <div className=" flex justify-end">
                 <div className="price_tag">
@@ -88,40 +90,38 @@ export default function Main() {
             </Link>
           </div>
 
-         <Link href= './property/1'>
-         <div className="house_2">
-            <img className="property_two"  src="./chev.jpg" />
-            <div className=" flex justify-start">
-              <div className="price_tag_2">
-                <div className="price_border">
-                  <center>
-                    <p className="listing_price lek">N400,000,00</p>
-                    <p className="list_des">Chevron Lekki</p>
-                    <p className="list_des_sub">View</p>
-                  </center>
-                </div>
-              </div>{" "}
+          <Link href="./property/1">
+            <div className="house_2">
+              <img className="property_two" src="./chev.jpg" />
+              <div className=" flex justify-start">
+                <div className="price_tag_2">
+                  <div className="price_border">
+                    <center>
+                      <p className="listing_price lek">N400,000,00</p>
+                      <p className="list_des">Chevron Lekki</p>
+                      <p className="list_des_sub">View</p>
+                    </center>
+                  </div>
+                </div>{" "}
+              </div>
             </div>
-          </div>
-
-         </Link>
-         <Link href='./property/5'>
-           <div className="house_1">
-            <img className="property_three" src="./fine.jpg" />
-            <div className=" flex justify-end">
-              <div className="price_tag">
-                <div className="price_border">
-                  <center>
-                    <p className="listing_price chevron_text">N220,000,000</p>
-                    <p className="list_des">Chevron Lekki</p>
-                    <p className="list_des_sub">View</p>
-                  </center>
-                </div>
-              </div>{" "}
+          </Link>
+          <Link href="./property/5">
+            <div className="house_1">
+              <img className="property_three" src="./fine.jpg" />
+              <div className=" flex justify-end">
+                <div className="price_tag">
+                  <div className="price_border">
+                    <center>
+                      <p className="listing_price chevron_text">N220,000,000</p>
+                      <p className="list_des">Chevron Lekki</p>
+                      <p className="list_des_sub">View</p>
+                    </center>
+                  </div>
+                </div>{" "}
+              </div>
             </div>
-          </div>
-         </Link>
-        
+          </Link>
         </div>
 
         <div className="frame_div">
@@ -185,7 +185,7 @@ export default function Main() {
           </div>
         </div>
       </div>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }

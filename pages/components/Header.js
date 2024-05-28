@@ -66,7 +66,7 @@ export default function Header() {
                         <p className="header_text_menu">SERVICES</p>
 
             </Link>
-            <Link href='../../blogs'>
+            <Link href='../../blog'>
                         <p className="header_text_menu">MEDIA</p>
 
             </Link>

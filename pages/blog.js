@@ -100,8 +100,8 @@ export default function Blog() {
       <div className="frame_div">
         <p className=" blog_head mb-10">VIDEO GALLERY</p>
 
-        <div className="grid grid-cols-3 mb-20 gap-2 ">
-          <div className="vidj">
+        <div className="grid grid-cols-1 md:grid-cols-3 mb-20 gap-10 ">
+          <div className="">
             <div
               className="wistia_responsive_padding"
               style={{ padding: "177.78% 0 0 0", position: "relative" }}
@@ -150,7 +150,7 @@ export default function Blog() {
               </div>
             </div>
           </div>
-          <div className="vidj">
+          <div className="">
             <div
               className="wistia_responsive_padding"
               style={{ padding: "177.78% 0 0 0", position: "relative" }}
@@ -203,7 +203,7 @@ export default function Blog() {
               </div>
             </div>
           </div>
-          <div className="vidj">
+          <div className="">
             <div
               className="wistia_responsive_padding"
               style={{ padding: "177.78% 0 0 0", position: "relative" }}
