@@ -781,6 +781,7 @@
 
 .learn_more {
   font-family: "Manrope", sans-serif;
+  margin-bottom: 10px !important;
 }
 
 .arrow {
@@ -795,7 +796,6 @@
 }
 
 .service_grid {
-  width: 600px;
   padding: 40px;
   height: 350px;
   border: 1px solid rgba(0, 0, 0, 0.208);

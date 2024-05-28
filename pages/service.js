@@ -1,12 +1,14 @@
 import Link from "next/link";
 import React from "react";
+import Header from "./components/Header";
 
 export default function Service() {
   return (
     <div>
+      <Header/>
       <div className="frame_div">
         <p className="service_head">SERVICES</p>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <Link href="./commercial">
             <div className="service_grid">
               <img
@@ -202,7 +204,7 @@ export default function Service() {
                 Land acquisition involves the process of acquiring parcels of
                 land for various purposes, such as development, or conservation.
               </p>
-              <div className="flex learn_more gap-6 mt-8">
+              <div className="flex learn_more gap-6 mt-4">
                 <p>Learn More</p>
                 <img
                   className="arrow"
