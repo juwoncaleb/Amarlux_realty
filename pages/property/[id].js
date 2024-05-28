@@ -130,7 +130,7 @@ export default function PropertyPage() {
         </div>
         <div className="propert_gallery">
           <p className="gallery">PROPERTY GALLERY</p>
-          <div className="grid-cols-3 grid gap-4 ">
+          <div className="md:grid-cols-3 grid gap-4 ">
             {images.data.map((image, index) => {
               const imageUrl = `http://127.0.0.1:1337${image.attributes.url}`;
               return (
@@ -143,6 +143,7 @@ export default function PropertyPage() {
                     <center>
                       <Button onClick={() => openModalWithImage(index)}>
                         <img
+                        className="eye_icon"
                           width="50"
                           height="50"
                           src="https://img.icons8.com/ios/50/visible--v1.png"
@@ -209,25 +210,25 @@ export default function PropertyPage() {
               <div className="propertt_detali">
                 <div>
                   <hr className="line" />
-                  <div className="flex prop_de lg:gap-10">
+                  <div className="md:flex  lg:gap-10">
                     <p className="properties_des_header">DESCRIPTION</p>
                     <p className="properties_des">{description}</p>
                   </div>
                   <hr className="line" />
 
-                  <div className="flex lg:gap-32 md:gap-32 gap-20">
+                  <div className="md:flex lg:gap-32 md:gap-32 gap-20">
                     <p className="properties_des_header">LOCATION</p>
                     <p className="properties_des">{location}</p>
                   </div>
                   <hr className="line" />
-                  <div className="flex lg:gap-32 md:gap-32 gap-20">
+                  <div className="md:flex lg:gap-32 md:gap-32 gap-20">
                     <p className="properties_des_header">STATUS</p>
                     <p className="properties_des">{status}</p>
                   </div>
                 </div>
                 <hr className="line " />
 
-                <div className=" flex lg:gap-32 md:gap-20 ">
+                <div className=" md:flex lg:gap-32 md:gap-20 ">
                   <p className="properties_des_header">
                     SHARE <br /> PROPERTY
                   </p>
@@ -259,32 +260,32 @@ export default function PropertyPage() {
                 <div>
                   <hr className="line" />
                   <div className=" gap-20">
-                    <p className="properties_des_header text-center">
+                    <p className="properties_des_header md:text-center">
                       OTHER AMENITIES
                     </p>
 
-                    <div className="flex other gap-32">
+                    <div className="md:flex other gap-32">
                       <p>Stories</p>
                       <p> {stories}</p>
                     </div>
-                    <div className="flex other gap-32">
+                    <div className="md:flex other gap-32">
                       <p>POOL</p>
                       <p> {pool ? "True" : "false"}</p>
                     </div>
-                    <div className="flex other gap-32">
+                    <div className="md:flex other gap-32">
                       <p>POP CEILING</p>
                       <p> {popCeiling ? "True" : "false"}</p>
                     </div>
-                    <div className="flex other gap-32">
+                    <div className="md:flex other gap-32">
                       <p>smartHome</p>
                       <p>{smartHome ? "True" : "false"}</p>
                     </div>
 
-                    <div className="flex other gap-32">
+                    <div className="md:flex other gap-32">
                       <p>Boy's QUater</p>
                       <p> {bq ? "True" : "false"}</p>
                     </div>
-                    <div className="flex other gap-32">
+                    <div className="md:flex other gap-32">
                       <p>Year Built</p>
                       <p>
                         {" "}
@@ -292,7 +293,7 @@ export default function PropertyPage() {
                       </p>
                     </div>
 
-                    <div className="flex other gap-32">
+                    <div className="md:flex other gap-32">
                       <p>Status</p>
                       <p> {status ? "True" : "false"}</p>
                     </div>
@@ -329,7 +330,7 @@ export default function PropertyPage() {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

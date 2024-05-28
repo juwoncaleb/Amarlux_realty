@@ -97,17 +97,31 @@ export default function Page() {
                     src={imageUrl}
                     alt={title}
                   />
-                  <p className="property_name">N{formattedPrice}</p>
+                 <div className="prop_det_info">
+                 <p className="property_price">N{formattedPrice}</p>
                   <p  className="property_location">{location}</p>
                   <p className="prop_deb mb-10">
                   {bedroom}Bed | {bathroom}bath |{" "}
                   {squareMeter} SQR ft
                 </p>
+                 </div>
                 </div>
               </Link>
             </div>
           );
         })}
+      </div>
+      <div className="cta_div flex ">
+        <div className="">
+          <p className="amralux_text_head text-center">Amarlux Realty</p>
+          <p className="amralux_text text-center">
+            We make home buying and selling, easy and stress free. Ensuring you
+            <br /> get the best deal FAST{" "}
+          </p>
+          <center>
+            <button className="contact">Let's Talk</button>
+          </center>
+        </div>
       </div>
     </div>
   );

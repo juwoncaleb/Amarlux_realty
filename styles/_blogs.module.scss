@@ -10,10 +10,7 @@
   margin-top: 100px;
   padding: 100px;
 }
-.listing_property {
-  height: 400px;
-  width: 85%;
-}
+
 .property_name {
   font-family: "Syncopate", sans-serif;
   font-weight: 400;
@@ -21,12 +18,7 @@
   font-size: 24px;
   margin-top: 20px;
 }
-.property_location {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 20px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
+
 .prop_deb {
   font-family: "Cormorant Garamond", serif;
   font-size: 17px;
@@ -67,23 +59,9 @@
   margin-top: 40px;
   margin-bottom: 40px;
 }
-.properties_des_header {
-  font-family: "Syncopate", sans-serif;
-  font-size: 37px;
-}
-.properties_des {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px !important;
-}
-.share_icon {
-  height: 40px !important;
-  margin-top: 5px;
-}
 
-.kum_banner {
-  height: 500px;
-  margin-right: 80px;
-}
+
+
 
 .kum_title {
   font-family: "Cormorant Garamond", serif;
@@ -153,28 +131,15 @@
     font-size: 22px;
     margin-top: 20px;
   }
-  .prop_de {
-    flex-direction: column;
-  }
+ 
 }
 @media only screen and (max-width: 790px) {
-  .properties_des_header {
-    font-family: "Syncopate", sans-serif;
-    font-size: 30px;
-  }
-
-  .properties_des {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 20px !important;
-  }
+ 
+ 
   .agent_info {
     flex-direction: column;
   }
-  .kum_banner {
-    height: 400px;
-    width: 400px;
-    margin-right: 0px;
-  }
+  
 }
 @media only screen and (max-width: 500px) {
   .property_list_name {

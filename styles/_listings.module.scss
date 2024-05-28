@@ -6,7 +6,11 @@
   line-height: 85px;
   margin-bottom: 100px;
 }
-
+.properties_des {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px !important;
+  margin-left: 50px;
+}
 .property_name {
   font-family: "Syncopate", sans-serif;
   font-weight: 400;
@@ -20,11 +24,23 @@
   margin-top: 4px;
   margin-bottom: 4px;
 }
+.properties_des_header {
+  font-family: "Syncopate", sans-serif;
+  font-size: 37px;
+}
 
 .prop_deb {
   font-size: 17px;
 }
-
+.property_price {
+  font-family: "Syncopate", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+}
+.listing_property {
+  height: 400px;
+  width: 85%;
+}
 .listing_details {
   height: 50vh;
   width: 100%;
@@ -112,7 +128,9 @@
   font-size: 50px;
   margin-top: 20px;
 }
-
+.kum_banner {
+  margin-right: 80px;
+}
 .form_input {
   height: 50px;
   width: 100%;
@@ -128,6 +146,7 @@
   font-family: "Cormorant Garamond", serif;
   font-size: 20px;
 }
+
 .call {
   margin-top: 50px;
   width: 200px;
@@ -151,6 +170,88 @@
 
 @media only screen and (max-width: 1200px) {
   .listing_property {
-    height: 200px;
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .properties_des_header {
+    font-family: "Syncopate", sans-serif;
+    font-size: 30px;
+  }
+  
+  .listing_property {
+    height: 550px;
+    width: 500px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+  }
+  .prop_det_info {
+    margin-left: 100px;
+  }
+  .property_price {
+    font-family: "Syncopate", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .property_location {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  .properties_des {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px !important;
+  }
+  .amarachi {
+    font-size: 45px;
+    font-family: "Cormorant Garamond", serif;
+    line-height: 65px;
+    margin-bottom: 30px;
+  }
+  .eye_icon {
+    height: 30px;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .properties_des_header {
+    font-family: "Syncopate", sans-serif;
+    font-size: 26px;
+  }
+  
+  .exclusive_listings {
+    margin-top: 150px;
+    font-size: 60px;
+    font-family: "Cormorant Garamond", serif;
+    line-height: 55px;
+    margin-bottom: 100px;
+  }
+
+  .listing_property {
+    height: 400px;
+    width: 400px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
+  .share_icon {
+    height: 40px !important;
+    margin-top: 5px;
+  }
+
+  .prop_det_info {
+    margin-left: 0px;
+  }
+  .properties_des {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px !important;
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+  .share_icon {
+    height: 30px !important;
+    margin-top: 5px;
+    width: 30px !important;
   }
 }

@@ -77,3 +77,16 @@
   font-size: 18px;
   margin-top: 25px;
 }
+
+@media only screen and (max-width: 490px) {
+  .amralux_text_head {
+    font-size: 35px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+  }
+  .amralux_text {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+  }
+  
+}
