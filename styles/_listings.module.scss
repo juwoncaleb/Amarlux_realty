@@ -148,3 +148,9 @@
   line-height: 85px;
   margin-bottom: 30px;
 }
+
+@media only screen and (max-width: 1200px) {
+  .listing_property {
+    height: 200px;
+  }
+}

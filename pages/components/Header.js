@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState } from "react";
 
 export default function Header() {
@@ -18,12 +19,16 @@ export default function Header() {
   };
 
   return (
-    <div>
+    <div className="mb-6">
+      
       <div className="flex header_component justify-between">
-        <img className="logo_height" src="./lg.png" alt="logo" />
+        <Link href='../../'>
+                <img className="logo_height" src="../../lg.png" alt="logo" />
+
+        </Link>
         {!open ? (
           <img
-            className="header_menu_open"
+            className="header_menu_open cursor-pointer"
             width="50"
             height="30"
             src="https://img.icons8.com/ios/50/menu--v7.png"
@@ -33,7 +38,7 @@ export default function Header() {
         ) : (
           <img
             onClick={handleClose}
-            className="header_menu_close"
+            className="header_menu_close cursor-pointer"
             width="50"
             height="50"
             src="https://img.icons8.com/ios/50/1A1A1A/circled-x.png"
@@ -49,11 +54,26 @@ export default function Header() {
           }`}
         >
           <div className="header_menu_selection">
-            <p className="header_text_menu">HOME</p>
-            <p className="header_text_menu">LISTING</p>
-            <p className="header_text_menu">SERVICES</p>
-            <p className="header_text_menu">MEDIA</p>
-            <p className="header_text_menu">CONTACT</p>
+            <Link href='.../../'>
+                        <p className="header_text_menu">HOME</p>
+
+            </Link>
+            <Link href='../../listings'>
+                        <p className="header_text_menu">LISTING</p>
+
+            </Link>
+            <Link href='../../services'>
+                        <p className="header_text_menu">SERVICES</p>
+
+            </Link>
+            <Link href='../../blogs'>
+                        <p className="header_text_menu">MEDIA</p>
+
+            </Link>
+            <Link href='../../contact'>
+                        <p className="header_text_menu">CONTACT</p>
+
+            </Link>
           </div>
 
           <div className="contact_img">

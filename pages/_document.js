@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
+      <script src="https://accounts.google.com/gsi/client" async defer></script>
       <link
         rel="stylesheet"
         type="text/css"
@@ -60,7 +61,6 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-       
       </body>
     </Html>
   );

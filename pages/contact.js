@@ -15,7 +15,6 @@ export default function contact() {
 
       {/* PICTURE */}
       <div className="contact_img">
-        <img src="./amp.jpg"/>
       </div>
     </div>
   );

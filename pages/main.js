@@ -5,39 +5,39 @@ import "slick-carousel/slick/slick-theme.css";
 import googleOneTap from "google-one-tap";
 import jwt_decode from "jwt-decode";
 import Header from "./components/Header";
-
+import Link from "next/link";
+import Footer from "./components/Footer";
 
 export default function Main() {
   const [userInfo, setUserInfo] = useState(null);
 
-  const options = {
-    client_id:
-      "982962606566-21g54u29m5t0hv88pfu4rkjppc1pniar.apps.googleusercontent.com", // required
-    auto_select: false, // optional
-    cancel_on_tap_outside: false, // optional
-    context: "signin", // optional
-  };
-
- 
-
   useEffect(() => {
+    const options = {
+      client_id:
+        "1024401846799-jvgpcseppebhsm1gv3o8ahecssgbj5gi.apps.googleusercontent.com", // required
+      auto_select: false, // optional
+      cancel_on_tap_outside: false, // optional
+      context: "signin", // optional
+    };
+
     googleOneTap(options, (response) => {
       // Log the response for debugging
-      console.log("Response from Google One Tap:", response, response.credential);
-   
-    
+      console.log(
+        "Response from Google One Tap:",
+        response,
+        response.credential
+      );
     });
   }, []);
 
-return (
+  return (
     <div>
-      <Header/>
+      <Header />
       <div>
         <div className="discover_div">
           <div className="flex  hero_tex">
             <p className="head_text"> DISCOVER YOUR DREAM HOME</p>
-         
-            
+
             <div className="header_div mt-10 ">
               <div className="header_div_sub">
                 <p className="hero_text">
@@ -50,6 +50,9 @@ return (
               </div>
             </div>
           </div>
+          {/* <center>
+            <img className="hero_img_" src="./land.jpg" />
+          </center> */}
           <div className="hero_img flex justify-between">
             <img className="sky" src="./top.jpg" />
             <img className="pool" src="./poop.jpg" />
@@ -68,30 +71,32 @@ return (
           </p>
 
           <div className="house_1">
-            <img src="./h1.jpg" />
-            <div className=" flex justify-end">
-              <div className="price_tag">
-                <div className="price_border">
-                  <center>
-                    <p className="listing_price">$3,500,000</p>
-                    <p className="list_des">Lekki Ikoyi Axis</p>
-                    <p className="list_des">Plot 2193</p>
-                    <p className="list_des_sub">View</p>
-                  </center>
-                </div>
-              </div>{" "}
-            </div>
+            <Link href= './property/2'>
+              <img className="property_one" src="./land.jpg" />
+              <div className=" flex justify-end">
+                <div className="price_tag">
+                  <div className="price_border">
+                    <center>
+                      <p className="listing_price">N400,000,000</p>
+                      <p className="list_des">Megamound Estates</p>
+                      <p className="list_des">Ikota Lekki</p>
+                      <p className="list_des_sub">View</p>
+                    </center>
+                  </div>
+                </div>{" "}
+              </div>
+            </Link>
           </div>
 
-          <div className="house_2">
-            <img src="./ho.jpg" />
+         <Link href= './property/1'>
+         <div className="house_2">
+            <img className="property_two"  src="./chev.jpg" />
             <div className=" flex justify-start">
               <div className="price_tag_2">
                 <div className="price_border">
                   <center>
-                    <p className="listing_price">$1,500,000</p>
-                    <p className="list_des">Nicon Estate</p>
-                    <p className="list_des">Plot 3393</p>
+                    <p className="listing_price lek">N400,000,00</p>
+                    <p className="list_des">Chevron Lekki</p>
                     <p className="list_des_sub">View</p>
                   </center>
                 </div>
@@ -99,25 +104,24 @@ return (
             </div>
           </div>
 
-          <div className="house_1">
-            <img src="./op.jpg" />
+         </Link>
+         <Link href='./property/5'>
+           <div className="house_1">
+            <img className="property_three" src="./fine.jpg" />
             <div className=" flex justify-end">
               <div className="price_tag">
                 <div className="price_border">
                   <center>
-                    <p className="listing_price">$2,500,000</p>
-                    <p className="list_des">Oniru Victoria 1sland</p>
-                    <p className="list_des">Plot 2193</p>
+                    <p className="listing_price chevron_text">N220,000,000</p>
+                    <p className="list_des">Chevron Lekki</p>
                     <p className="list_des_sub">View</p>
                   </center>
                 </div>
               </div>{" "}
             </div>
           </div>
-
-      
-
-         
+         </Link>
+        
         </div>
 
         <div className="frame_div">
@@ -151,7 +155,7 @@ return (
         </div>
         <div>
           <p className="article text-center">Article</p>
-          <div className="flex frame_div gap-10 mt-20">
+          <div className="grid md:flex frame_div gap-10 mt-20">
             <div>
               <img className="blog_img" src="./p1.jpg" />
               <p className="date_shade">July 18</p>
@@ -181,6 +185,7 @@ return (
           </div>
         </div>
       </div>
+      {/* <Footer/> */}
     </div>
   );
 }
