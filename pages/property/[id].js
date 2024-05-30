@@ -48,7 +48,7 @@ export default function PropertyPage() {
 
   const option = {
     client_id:
-      "982962606566-21g54u29m5t0hv88pfu4rkjppc1pniar.apps.googleusercontent.com", // required
+      "711392695392-53glhbgfacnh3a5tatq5978oolannhk5.apps.googleusercontent.com", // required
     auto_select: false, // optional
     cancel_on_tap_outside: false, // optional
     context: "signin", // optional

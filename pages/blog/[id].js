@@ -1,6 +1,8 @@
-import { useRouter } from 'next/router';
-import React, { useState, useEffect } from 'react';
+import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 // FETCHING DATA FROM STRAPI
 async function fetchdata() {
@@ -27,42 +29,55 @@ async function fetchdata() {
   }
 }
 
-
-export default function blogPosts() {
+export default function BlogPosts() {
   // GETTING THE ID FOR THE DYNAMIC RENDERING OF THE PAGE
   const router = useRouter();
   const { id } = router.query;
   const [blog, setBlog] = useState(null);
 
-  const blogid = id - 1
   useEffect(() => {
     async function getData() {
-      const data = await fetchdata(blogid);
+      const data = await fetchdata();
       console.log("Fetched data:", data);
       setBlog(data);
     }
-    getData();
-  }, []);
+    if (id) {
+      getData();
+    }
+  }, [id]);
 
   if (!blog || !blog.data) {
     return <div>Loading...</div>;
   }
 
-  const blogPosts = blog.data[blogid];
-  console.log(blogPosts)
-  console.log(blogPosts)
+  const blogid = id - 1;
+  let blogPosts;
+  if (blog.data[blogid]) {
+    blogPosts = blog.data[blogid].attributes;
+  } else {
+    console.error("Blog data or blog ID is not defined properly");
+    return <div>Blog not found</div>; // Handle the error case, maybe redirect or show a user-friendly message
+  }
+  console.log("This is the blog you need:", blogPosts);
+  const { Thumbnail, Title } = blog.data[blogid].attributes;
+  const blogHeader= Title
+  const thumbnailUrl = Thumbnail?.data?.attributes?.url
+    ? `http://127.0.0.1:1337${Thumbnail.data.attributes.url}`
+    : "";
+
   return (
     <div>
-   HELLO
-   <p>{blogPosts.attributes.Title}</p>
-   {blogPosts.map((post, index) => (
-          <div key={index}>
-          
-            {/* Render each blog post content here */}
-            <BlocksRenderer content={post.attributes.blogContent} />
-          </div>
-        ))}
-
+      <Header />
+      <div className="prose mx-auto my-10 mt-20">
+        <p className="text-center blogHeader">{blogHeader}</p>
+        <img src={thumbnailUrl} />
+        {blogPosts && blogPosts.blogContent ? (
+          <BlocksRenderer content={blogPosts.blogContent} />
+        ) : (
+          <div>No content available</div>
+        )}
+      </div>
+      <Footer />
     </div>
   );
 }

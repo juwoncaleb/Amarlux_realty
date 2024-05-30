@@ -14,7 +14,7 @@ export default function Main() {
   useEffect(() => {
     const options = {
       client_id:
-        "1024401846799-jvgpcseppebhsm1gv3o8ahecssgbj5gi.apps.googleusercontent.com", // required
+        "711392695392-53glhbgfacnh3a5tatq5978oolannhk5.apps.googleusercontent.com", // required
       auto_select: false, // optional
       cancel_on_tap_outside: false, // optional
       context: "signin", // optional
