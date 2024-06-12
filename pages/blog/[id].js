@@ -47,7 +47,10 @@ export default function BlogPosts() {
   }, [id]);
 
   if (!blog || !blog.data) {
-    return <div>Loading...</div>;
+    return <div className="loading_image">
+    <center>
+      <img className="logo_height" src="../../lg.png" alt="logo" />
+    </center></div>
   }
 
   const blogid = id - 1;

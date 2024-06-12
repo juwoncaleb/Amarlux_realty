@@ -143,7 +143,7 @@ export default function PropertyPage() {
                     <center>
                       <Button onClick={() => openModalWithImage(index)}>
                         <img
-                        className="eye_icon"
+                          className="eye_icon"
                           width="50"
                           height="50"
                           src="https://img.icons8.com/ios/50/visible--v1.png"
@@ -304,7 +304,13 @@ export default function PropertyPage() {
                   <div>
                     <p className="amarachi ">Amarachi Odife</p>
                     <p className="kum_bio">
-                      Broker Associate, #1 Realtor in Austin (2020 & 2021), #3
+                      Broker Associate, #1 Realtor in Lagos (2020 & 2021), #3
+                      Realtor in Texas, #35 Realtor in the Country, Member of
+                      Elite25, Member of Luxury League Austin, Member of
+                      Sotheby’s International Realty Market Leaders
+                    </p>
+                    <p className="kum_bio">
+                      Broker Associate, #1 Realtor in Lagos (2020 & 2021), #3
                       Realtor in Texas, #35 Realtor in the Country, Member of
                       Elite25, Member of Luxury League Austin, Member of
                       Sotheby’s International Realty Market Leaders

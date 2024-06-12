@@ -28,7 +28,11 @@
   font-family: "Syncopate", sans-serif;
   font-size: 37px;
 }
-
+.share_icon {
+  height: 35px !important;
+  margin-top: 5px;
+  width: 35px !important;
+}
 .prop_deb {
   font-size: 17px;
 }
@@ -129,7 +133,8 @@
   margin-top: 20px;
 }
 .kum_banner {
-  margin-right: 80px;
+  margin-right: 40px;
+  height: 550px;
 }
 .form_input {
   height: 50px;

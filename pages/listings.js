@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import googleOneTap from "google-one-tap";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 
 async function fetchData() {
@@ -60,13 +62,17 @@ export default function Page() {
   }, []);
 
   if (!property) {
-    return <div>Loading...</div>;
+    return<div className="loading_image">
+    <center>
+      <img className="logo_height" src="../../lg.png" alt="logo" />
+    </center></div>
   }
 
   const listings = property.data;
 
   return (
     <div>
+      <Header/>
       <p className="exclusive_listings text-center">
         Exclusive <br /> Listing
       </p>
@@ -123,6 +129,7 @@ export default function Page() {
           </center>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

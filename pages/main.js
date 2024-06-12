@@ -132,6 +132,8 @@ export default function Main() {
             allow="autoplay; gyroscope; picture-in-picture;"
             allowfullscreen
           ></iframe>
+
+       
         </div>
         <div className="landingpage_about flex justify-around gap-10">
           <img className="amarlux" src="./pro.jpg" />
@@ -185,7 +187,7 @@ export default function Main() {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
