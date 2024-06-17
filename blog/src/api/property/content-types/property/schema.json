@@ -85,11 +85,6 @@
       "default": true,
       "required": true
     },
-    "popCeiling": {
-      "type": "boolean",
-      "default": true,
-      "required": true
-    },
     "smartHome": {
       "type": "boolean",
       "default": true,
@@ -99,6 +94,22 @@
       "type": "boolean",
       "default": true,
       "required": true
+    },
+    "Cinema": {
+      "type": "boolean",
+      "default": true
+    },
+    "RoofTopTerrace": {
+      "type": "boolean",
+      "default": true
+    },
+    "Elevator": {
+      "type": "boolean",
+      "default": true
+    },
+    "Gym": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
