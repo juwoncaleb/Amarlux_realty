@@ -767,6 +767,11 @@
     width: 30px !important;
   }
 }
+.modal_class {
+  max-width: 30%;
+  max-height: 45%;
+}
+
 .service_head {
   font-size: 50px;
   font-family: "Cormorant Garamond", serif;

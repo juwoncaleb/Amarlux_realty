@@ -116,6 +116,9 @@ export default function PropertyPage() {
     setSelectedImageIndex(index);
     onOpen();
   };
+
+ 
+  
   return (
     <div>
       <Header />
@@ -154,7 +157,9 @@ export default function PropertyPage() {
 
                     <Modal isOpen={isOpen} onClose={onClose} size="full">
                       <ModalOverlay bg="rgba(0, 0, 0, 0.4)" />
-                      <ModalContent maxWidth="30%" maxHeight="45%">
+                      <ModalContent
+                        maxWidth={{ base: "90%", sm: "90%", md: "55%", lg: "45%" }}
+                        >
                         <ModalHeader>
                           {" "}
                           <p className="">{title}</p>
