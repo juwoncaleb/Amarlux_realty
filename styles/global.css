@@ -945,14 +945,24 @@
   margin-top: 20px;
 }
 
+.blogs_img {
+  height: 50%;
+}
+
 .prop_deb {
   font-family: "Cormorant Garamond", serif;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .property_price {
   font-family: "Syncopate", sans-serif;
   font-size: 30px;
+  font-weight: 300;
+}
+
+.property_location {
+  font-family: "Syncopate", sans-serif;
+  font-size: 20px;
   font-weight: 300;
 }
 

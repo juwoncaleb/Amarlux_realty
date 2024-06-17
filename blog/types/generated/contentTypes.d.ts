@@ -428,14 +428,23 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
       Attribute.Private &
       Attribute.DefaultTo<true>;
     pool: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+<<<<<<< HEAD
+=======
+    popCeiling: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+>>>>>>> parent of 9feed3f (SEND)
     smartHome: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<true>;
     bq: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+<<<<<<< HEAD
     Cinema: Attribute.Boolean & Attribute.DefaultTo<true>;
     RoofTopTerrace: Attribute.Boolean & Attribute.DefaultTo<true>;
     Elevator: Attribute.Boolean & Attribute.DefaultTo<true>;
     Gym: Attribute.Boolean & Attribute.DefaultTo<true>;
+=======
+>>>>>>> parent of 9feed3f (SEND)
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

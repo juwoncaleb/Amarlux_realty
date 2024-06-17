@@ -1,86 +1,72 @@
-import { useRouter } from "next/router";
-import React, { useState, useEffect } from "react";
-import { BlocksRenderer } from "@strapi/blocks-react-renderer";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { useEffect, useState } from "react";
+import { fetchEntries } from "../../lib/contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import RichText from "../components/Richtext";
 
-// FETCHING DATA FROM STRAPI
-async function fetchdata() {
-  const options = {
-    headers: {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
-    },
-  };
-  try {
-    const res = await fetch(
-      "http://127.0.0.1:1337/api/blogs?populate=*",
-      options
-    );
-    if (!res.ok) {
-      console.error(`Error: ${res.status} ${res.statusText}`);
-      return null;
-    }
-    const response = await res.json();
-    console.log(response);
-    return response;
-  } catch (err) {
-    console.error("Fetch error:", err);
-    return null;
-  }
-}
-
-export default function BlogPosts() {
-  // GETTING THE ID FOR THE DYNAMIC RENDERING OF THE PAGE
-  const router = useRouter();
-  const { id } = router.query;
-  const [blog, setBlog] = useState(null);
+export default function Blog({ entry }) {
+  const [isLoading, setIsLoading] = useState(true); // State to track loading
 
   useEffect(() => {
-    async function getData() {
-      const data = await fetchdata();
-      console.log("Fetched data:", data);
-      setBlog(data);
+    if (entry) {
+      setIsLoading(false); // Set loading to false once entry is loaded
     }
-    if (id) {
-      getData();
-    }
-  }, [id]);
+  }, [entry]);
 
-  if (!blog || !blog.data) {
-    return <div className="loading_image">
-    <center>
-      <img className="logo_height" src="../../lg.png" alt="logo" />
-    </center></div>
+  if (isLoading) {
+    return (
+      <div className="loading_image">
+        <center>
+          <img className="logo_height" src="../../lg.png" alt="logo" />
+        </center>
+      </div>
+    );
   }
 
-  const blogid = id - 1;
-  let blogPosts;
-  if (blog.data[blogid]) {
-    blogPosts = blog.data[blogid].attributes;
-  } else {
-    console.error("Blog data or blog ID is not defined properly");
-    return <div>Blog not found</div>; // Handle the error case, maybe redirect or show a user-friendly message
-  }
-  console.log("This is the blog you need:", blogPosts);
-  const { Thumbnail, Title } = blog.data[blogid].attributes;
-  const blogHeader= Title
-  const thumbnailUrl = Thumbnail?.data?.attributes?.url
-    ? `http://127.0.0.1:1337${Thumbnail.data.attributes.url}`
-    : "";
+  // Once isLoading is false and entry is available, render the blog content
+  const { title, thumbnail, content } = entry.fields;
+  const renderedContent = documentToReactComponents(content);
 
   return (
-    <div>
-      <Header />
-      <div className="prose mx-auto my-10 mt-20">
-        <p className="text-center blogHeader">{blogHeader}</p>
-        <img src={thumbnailUrl} />
-        {blogPosts && blogPosts.blogContent ? (
-          <BlocksRenderer content={blogPosts.blogContent} />
-        ) : (
-          <div>No content available</div>
-        )}
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="max-w-3xl w-full p-8 bg-white shadow-lg rounded-lg">
+        <div className="mb-4">
+          {thumbnail && (
+            <img
+              src={thumbnail.fields.file.url}
+              alt={title}
+              className="w-full h-auto rounded-lg"
+            />
+          )}
+        </div>
+        <h1 className="text-3xl font-bold mb-4">{title}</h1>
+        <div className="prose">
+          <RichText content={content} />
+        </div>
       </div>
-      <Footer />
     </div>
   );
+}
+
+export async function getStaticPaths() {
+  const entries = await fetchEntries();
+  const paths = entries.map((entry) => ({
+    params: { id: entry.sys.id },
+  }));
+
+  return {
+    paths,
+    fallback: false, // Set to false to return a 404 if the ID is not found
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const { id } = params;
+  const entries = await fetchEntries();
+  const entry = entries.find((entry) => entry.sys.id === id);
+
+  return {
+    props: {
+      entry,
+    },
+  };
 }

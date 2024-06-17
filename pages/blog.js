@@ -1,33 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { createClient } from "contentful";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { fetchEntries } from "../lib/contentful";
 
-async function fetchdata() {
-  const options = {
-    headers: {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
-    },
-  };
-  try {
-    const res = await fetch(
-      "http://127.0.0.1:1337/api/blogs?populate=*",
-      options
-    );
-    if (!res.ok) {
-      console.error(`Error: ${res.status} ${res.statusText}`);
-      return null;
-    }
-    const response = await res.json();
-    console.log(response);
-    return response;
-  } catch (err) {
-    console.error("Fetch error:", err);
-    return null;
-  }
-}
-export default function Blog() {
+export default function Blog({ entries }) {
+  console.log(entries);
   useEffect(() => {
     const script1 = document.createElement("script");
     script1.src = "https://fast.wistia.com/embed/medias/jz1dh0ty1g.jsonp";
@@ -80,21 +59,6 @@ export default function Blog() {
       document.body.removeChild(script2);
     };
   }, []);
-  const [blog, setBlog] = useState(null);
-
-  useEffect(() => {
-    async function getData() {
-      const data = await fetchdata();
-      console.log("Fetched data:", data);
-      setBlog(data);
-    }
-    getData();
-  }, []);
-
-  if (!blog || !blog.data) {
-    return <div>Loading...</div>;
-  }
-  const blogPosts = blog.data;
 
   return (
     <div>
@@ -278,42 +242,45 @@ export default function Blog() {
           >
             BLOG POST
           </p>
-          {blogPosts.map((post, index) => (
-            <div key={index}>{/* Render each blog post content here */}</div>
-          ))}
-          <div className="grid frame_div grid-cols-1 gap-20 lg:grid-cols-3 ">
-            {blogPosts.map((post) => {
-              const { Title, blogContent, blogImages, Thumbnail, createdAt } =
-                post.attributes;
-              const thumbnailUrl = Thumbnail?.data?.attributes?.url
-                ? `http://127.0.0.1:1337${Thumbnail.data.attributes.url}`
-                : "";
-
-              return (
-                <div key={post.id}>
-                  <div>
-                    <Link href={`/blog/${post.id}`}>
-                      {thumbnailUrl && (
-                        <img
-                          preload="true"
-                          className="blog_thumbnail"
-                          src={thumbnailUrl}
-                          alt={Title}
-                        />
-                      )}
-                      <h3 className="blog_title">{Title}</h3>
-                      <p className="blog_date">
-                        {new Date(createdAt).toLocaleDateString()}
-                      </p>
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {entries.map((entry) => {
+                const { title, thumbnail } = entry.fields;
+                const entryId = entry.sys.id; // Get the entry ID
+                return (
+                  <div key={entryId} className="">
+                    <Link href={`/blog/${entryId}`}>
+                      <div>
+                        {" "}
+                        {/* Use a div wrapper instead of <a> */}
+                        {thumbnail && (
+                          <img
+                            src={thumbnail.fields.file.url}
+                            alt={title}
+                            className="blog_thumbnail"
+                          />
+                        )}
+                        <h3 className="blog_title text-xl font-bold">
+                          {title}
+                        </h3>
+                      </div>
                     </Link>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
       <Footer />
     </div>
   );
+}
+export async function getStaticProps() {
+  const entries = await fetchEntries();
+  return {
+    props: {
+      entries,
+    },
+  };
 }
