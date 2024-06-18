@@ -2,6 +2,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import googleOneTap from "google-one-tap";
+import { fetchProperties } from "@/lib/contentful";
+
 import {
   Modal,
   ModalOverlay,
@@ -42,28 +44,11 @@ async function fetchData(id) {
   }
 }
 
-export default function PropertyPage() {
+export default function PropertyPage({ entry }) {
+  console.log(entry);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const option = {
-    client_id:
-      "711392695392-53glhbgfacnh3a5tatq5978oolannhk5.apps.googleusercontent.com", // required
-    auto_select: false, // optional
-    cancel_on_tap_outside: false, // optional
-    context: "signin", // optional
-  };
-
-  useEffect(() => {
-    googleOneTap(option, (response) => {
-      // Log the response for debugging
-      console.log(
-        "Response from Google One Tap:",
-        response,
-        response.credential
-      );
-    });
-  }, []);
   const router = useRouter();
   const { id } = router.query;
   const [property, setProperty] = useState(null);
@@ -80,139 +65,145 @@ export default function PropertyPage() {
     }
   }, [id]);
 
-  if (!property) {
-    return (
-      <div className="loading_image">
-        <center>
-          <img className="logo_height" src="../../lg.png" alt="logo" />
-        </center>
-      </div>
-    );
-  }
+  // if (!property) {
+  //   return (
+  //     <div className="loading_image">
+  //       <center>
+  //         <img className="logo_height" src="../../lg.png" alt="logo" />
+  //       </center>
+  //     </div>
+  //   );
+  // }
 
-  const {
-    bq,
-    smartHome,
-    popCeiling,
-    pool,
-    stories,
-    title,
-    squareMeter,
-    status,
-    description,
-    price,
-    location,
-    bedroom,
-    bathroom,
-    images,
-    thumbnail,
-  } = property.data.attributes;
-
-  const formattedPrice = new Intl.NumberFormat().format(price);
-  const thumbnailUrl = `http://127.0.0.1:1337${thumbnail.data.attributes.url}`;
-
-  console.log("Thumbnail URL:", thumbnailUrl);
   const openModalWithImage = (index) => {
     setSelectedImageIndex(index);
     onOpen();
   };
+  const {
+    title,
+    thumbnail,
+    bathroom,
+    bedroom,
+    bq,
+    stories,
+    popCeiling,
+    status,
+    cinema,
+    description,
+    location,
+    pool,
+    squareMeters,
+    price,
+    smartHome,
+    yearBuilt,
+    media,
 
- 
-  
+    // ... other fields you want to display
+  } = entry.fields;
+
+  let fee = price.toLocaleString("en-NG", {
+    style: "currency",
+    currency: "NGN",
+  });
   return (
     <div>
       <Header />
       <div className="carousel">
         <div
           className="listing_details darken-background"
-          style={{ backgroundImage: `url(${thumbnailUrl})` }}
+          style={{ backgroundImage: `url(${thumbnail.fields.file.url})` }}
         >
           <center>
             <p className="prop_name">{title}</p>
           </center>
         </div>
+        <center>
+          <p className="property_price mt-14">{fee}</p>
+          <p className="property_list_name"></p>
+          <p className="property_information">
+            <span className="mr-4"> Beds {bedroom} |</span>{" "}
+            <span className="mr-4"> Baths {bathroom} | </span>
+            {squareMeters} SQRft
+          </p>
+          <Link href="../../contact">
+            <button className="inq_btn">INQUIRE NOW</button>
+          </Link>
+        </center>
         <div className="propert_gallery">
           <p className="gallery">PROPERTY GALLERY</p>
+
           <div className="md:grid-cols-3 grid gap-4 ">
-            {images.data.map((image, index) => {
-              const imageUrl = `http://127.0.0.1:1337${image.attributes.url}`;
+            {media.map((image, index) => {
+              const imageUrl = `https:${image.fields.file.url}`; // Ensure URL is prefixed with "https:"
               return (
                 <div
-                  key={image.id}
+                  key={image.sys.id}
                   className="listing_details darken-background"
                   style={{ backgroundImage: `url(${imageUrl})` }}
                 >
-                  <>
-                    <center>
-                      <Button onClick={() => openModalWithImage(index)}>
-                        <img
-                          className="eye_icon"
-                          width="50"
-                          height="50"
-                          src="https://img.icons8.com/ios/50/visible--v1.png"
-                          alt="visible--v1"
-                        />
-                      </Button>
-                    </center>
-
-                    <Modal isOpen={isOpen} onClose={onClose} size="full">
-                      <ModalOverlay bg="rgba(0, 0, 0, 0.4)" />
-                      <ModalContent
-                        maxWidth={{ base: "90%", sm: "90%", md: "55%", lg: "45%" }}
+                  <center>
+                    <Button onClick={() => openModalWithImage(index)}>
+                      <img
+                        className="eye_icon"
+                        width="50"
+                        height="50"
+                        src="https://img.icons8.com/ios/50/visible--v1.png"
+                        alt="visible--v1"
+                      />
+                    </Button>
+                  </center>
+                  <Modal isOpen={isOpen} onClose={onClose} size="full">
+                    <ModalOverlay bg="rgba(0, 0, 0, 0.4)" />
+                    <ModalContent
+                      maxWidth={{
+                        base: "90%",
+                        sm: "90%",
+                        md: "55%",
+                        lg: "45%",
+                      }}
+                    >
+                      <ModalHeader>
+                        {" "}
+                        <p className="">{title}</p>
+                      </ModalHeader>
+                      <ModalCloseButton />
+                      <ModalBody>
+                        <Carousel
+                          selectedItem={selectedImageIndex}
+                          showThumbs={true}
+                          thumbWidth={80}
+                          infiniteLoop={true}
+                          showIndicators={false}
+                          dynamicHeight={true}
                         >
-                        <ModalHeader>
-                          {" "}
-                          <p className="">{title}</p>
-                        </ModalHeader>
-                        <ModalCloseButton />
-                        <ModalBody>
-                          <Carousel
-                            selectedItem={selectedImageIndex}
-                            showThumbs={true}
-                            thumbWidth={80}
-                            infiniteLoop={true}
-                            showIndicators={false}
-                            dynamicHeight={true}
-                          >
-                            {images.data.map((image) => (
-                              <div key={image.id}>
-                                <img
-                                  src={`http://127.0.0.1:1337${image.attributes.url}`}
-                                  alt=""
-                                />
-                              </div>
-                            ))}
-                          </Carousel>
-                        </ModalBody>
-                        <ModalFooter>
-                          <Button colorScheme="blue" mr={3} onClick={onClose}>
-                            Close
-                          </Button>
-                        </ModalFooter>
-                      </ModalContent>
-                    </Modal>
-                  </>
-                  {/* Add any other content or overlay for the background image here */}
+                          {media.map((image) => (
+                            
+                            <div key={image.id}>
+                              <img
+                                src={`https:${image.fields.file.url}`}
+                                alt=""
+                              />
+                            </div>
+                          ))}
+                        </Carousel>
+                      </ModalBody>
+                      <ModalFooter>
+                        <Button colorScheme="blue" mr={3} onClick={onClose}>
+                          Close
+                        </Button>
+                      </ModalFooter>
+                    </ModalContent>
+                  </Modal>
                 </div>
               );
             })}
           </div>
 
-          <div className="flex justify-between gap-10">
+          <div className="flex justify-between mt-8 gap-10">
             <div className="prop_information">
-              <center>
-                <p className="property_price mt-14">N{formattedPrice}</p>
-                <p className="property_list_name">{title}</p>
-                <p className="property_information">
-                  <span className="mr-4">{bedroom} Beds |</span>{" "}
-                  <span className="mr-4">{bathroom} Baths | </span>
-                  {squareMeter} SQRft
-                </p>
-                <Link href="../../contact">
-                  <button className="inq_btn">INQUIRE NOW</button>
-                </Link>
-              </center>
-              <div className="propertt_detali">
+              <div className="propertt_detali ">
+              <p className="gallery">PROPERTY DETAILS</p>
+
                 <div>
                   <hr className="line" />
                   <div className="md:flex  lg:gap-10">
@@ -269,39 +260,32 @@ export default function PropertyPage() {
                       OTHER AMENITIES
                     </p>
 
-                    <div className="md:flex other gap-32">
-                      <p>Stories</p>
-                      <p> {stories}</p>
+                    <div className="flex justify-start">
+                      <div className="grid grid-cols-2 gap-10 properties_des">
+                        <p>Stories</p>
+                        <p> {stories}</p>
+                        <p>POOL</p>
+                        <p> {pool ? "True" : "false"}</p>
+                        <p>POP CEILING</p>
+                        <p> {popCeiling ? "True" : "false"}</p>
+                        <p>smartHome</p>
+                        <p>{smartHome ? "True" : "false"}</p>
+                        <p>Boy's QUater</p>
+                        <p> {bq ? "True" : "false"}</p>
+                        <p>Year Built</p>
+                        <p> {yearBuilt ? yearBuilt : "false"}</p>
+                        <p>Status</p>
+                        <p> {status ? "True" : "false"}</p>
+                      </div>
                     </div>
-                    <div className="md:flex other gap-32">
-                      <p>POOL</p>
-                      <p> {pool ? "True" : "false"}</p>
-                    </div>
-                    <div className="md:flex other gap-32">
-                      <p>POP CEILING</p>
-                      <p> {popCeiling ? "True" : "false"}</p>
-                    </div>
-                    <div className="md:flex other gap-32">
-                      <p>smartHome</p>
-                      <p>{smartHome ? "True" : "false"}</p>
-                    </div>
+                    <div className="md:flex other gap-32"></div>
+                    <div className="md:flex other gap-32"></div>
+                    <div className="md:flex other gap-32"></div>
 
-                    <div className="md:flex other gap-32">
-                      <p>Boy's QUater</p>
-                      <p> {bq ? "True" : "false"}</p>
-                    </div>
-                    <div className="md:flex other gap-32">
-                      <p>Year Built</p>
-                      <p>
-                        {" "}
-                        {property.yearBuilt ? property.yearBuilt : "false"}
-                      </p>
-                    </div>
+                    <div className="md:flex other gap-32"></div>
+                    <div className="md:flex other gap-32"></div>
 
-                    <div className="md:flex other gap-32">
-                      <p>Status</p>
-                      <p> {status ? "True" : "false"}</p>
-                    </div>
+                    <div className="md:flex other gap-32"></div>
                   </div>{" "}
                 </div>
                 <div className="flex agent_info gap-4 mt-14 justify-around">
@@ -341,7 +325,31 @@ export default function PropertyPage() {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
+}
+
+export async function getStaticPaths() {
+  const entries = await fetchProperties();
+  const paths = entries.map((entry) => ({
+    params: { id: entry.sys.id },
+  }));
+
+  return {
+    paths,
+    fallback: false, // Set to false to return a 404 if the ID is not found
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const { id } = params;
+  const entries = await fetchProperties();
+  const entry = entries.find((entry) => entry.sys.id === id);
+
+  return {
+    props: {
+      entry,
+    },
+  };
 }
