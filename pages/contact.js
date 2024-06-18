@@ -10,7 +10,7 @@ export default function contact() {
         <input placeholder="Email " className="contact_input" />
         <input placeholder="Phone" className="contact_input" />
         <input placeholder="Message" className="contact_input_message" />
-        <button className="contact">Let's Talk</button>
+        <button className="contact">Let us Talk</button>
       </div>
 
       {/* PICTURE */}

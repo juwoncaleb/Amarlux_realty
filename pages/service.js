@@ -40,7 +40,7 @@ export default function Service() {
               <img src="https://assets-global.website-files.com/65127446160a3ff5b1e6186c/6517a33229b7fe98f646b64e_service-02.svg" />
               <p className="service_header">Home Inspection</p>
               <p className="service_sub">
-                It involves a thorough assessment of a home's condition,
+                It involves a thorough assessment of a home condition,
                 identifying potential issues or needed repairs.
               </p>
               <div className="flex learn_more gap-6 mt-8">
@@ -225,7 +225,7 @@ export default function Service() {
               <br /> get the best deal for your money FAST{" "}
             </p>
             <center>
-              <button className="contact">Let's Talk</button>
+              <button className="contact">Let us Talk</button>
             </center>
           </div>
         </div>

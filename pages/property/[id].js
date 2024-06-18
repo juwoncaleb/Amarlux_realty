@@ -270,7 +270,7 @@ export default function PropertyPage({ entry }) {
                         <p> {popCeiling ? "True" : "false"}</p>
                         <p>smartHome</p>
                         <p>{smartHome ? "True" : "false"}</p>
-                        <p>Boy's QUater</p>
+                        <p>Boys Quater</p>
                         <p> {bq ? "True" : "false"}</p>
                         <p>Year Built</p>
                         <p> {yearBuilt ? yearBuilt : "false"}</p>

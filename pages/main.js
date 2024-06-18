@@ -147,12 +147,12 @@ export default function Main() {
             <p className="mt-8">
               Amarachi attributes her success to her effective working
               relationships with her clients. Her first priority is always open,
-              honest communication about her client’s particular needs and
+              honest communication about her clients particular needs and
               lifestyle. Finding the right property, or selling a home has its
               rewards, but for Amarachi, a life-long relationship with a client
               brings her genuine personal satisfaction
             </p>
-            <button className="contact">Let's Talk</button>
+            <button className="contact">Let us Talk</button>
           </div>
         </div>
         <div>

@@ -90,7 +90,7 @@ export default function Page({ properties }) {
             <br /> get the best deal FAST{" "}
           </p>
           <center>
-            <button className="contact">Let's Talk</button>
+            <button className="contact">Let us Talk</button>
           </center>
         </div>
       </div>

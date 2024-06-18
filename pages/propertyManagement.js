@@ -9,7 +9,7 @@ export default function propertyManagement() {
         <p className="service_con">
           Investing in commercial real estate can offer various benefits,
           including potential for higher returns, longer leases, and
-          diversification in your real estate portfolio. However, it's essential
+          diversification in your real estate portfolio. However, it is essential
           to conduct thorough research and due diligence before entering this
           dynamic and competitive market. Commercial real estate transactions
           often involve detailed negotiations, market analysis, and a deep
@@ -28,7 +28,7 @@ export default function propertyManagement() {
         <p className="service_con">
           Investing in commercial real estate can offer various benefits,
           including potential for higher returns, longer leases, and
-          diversification in your real estate portfolio. However, it's essential
+          diversification in your real estate portfolio. However, it is essential
           to conduct thorough research and due diligence before entering this
           dynamic and competitive market. Commercial real estate transactions
           often involve detailed negotiations, market analysis, and a deep
@@ -43,7 +43,7 @@ export default function propertyManagement() {
             <br /> get the best deal FAST{" "}
           </p>
           <center>
-            <button className="contact">Let's Talk</button>
+            <button className="contact">Let us Talk</button>
           </center>
         </div>
       </div>
