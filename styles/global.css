@@ -736,6 +736,11 @@
   }
 }
 @media only screen and (max-width: 490px) {
+  .form_feild {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
   .properties_des_header {
     font-family: "Syncopate", sans-serif;
     font-size: 26px;
@@ -923,6 +928,13 @@
   padding-bottom: 15px;
 }
 
+@media only screen and (max-width: 490px) {
+  .form_feild {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
 .listings {
   color: white !important;
   background-attachment: fixed;
