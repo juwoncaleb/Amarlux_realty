@@ -1242,6 +1242,9 @@
   .logo_height {
     height: 50px;
   }
+  .contact_img {
+    display: none;
+  }
 }
 @media only screen and (max-width: 1200px) {
   .contact_img {
