@@ -4,6 +4,13 @@ import googleOneTap from "google-one-tap";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { fetchProperties } from "@/lib/contentful";
+import {
+  AnimatePresence,
+  motion,
+  stagger,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 export default function Page({ properties }) {
   const option = {
@@ -61,13 +68,37 @@ export default function Page({ properties }) {
   return (
     <div>
       <Header />
-      <p className="exclusive_listings text-center">
+      <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            duration: 0.6,
+            delay: 0.2,
+          }}
+          className=""
+        > <p className="exclusive_listings text-center">
         Exclusive <br /> Listing
       </p>
+          </motion.div>
+     
       <div className="grid frame_div grid-cols-1 lg:grid-cols-3 ">
         {transformedData.map((property) => (
           <div key={property.id} className="property-card">
-            <Link href={`/property/${property.id}`}>
+             <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            duration: 0.6,
+            delay: 0.2,
+          }}
+          className=""
+        > <Link href={`/property/${property.id}`}>
               <img
                 className="listing_property"
                 src={property.thumbnailUrl}
@@ -79,10 +110,23 @@ export default function Page({ properties }) {
                 {property.bedroom}  Bed | {property.bathroom}  bath |  {property.squaremeter} SQR/M
               </p>
             </Link>
+          </motion.div>
+           
           </div>
         ))}
       </div>
-      <div className="cta_div flex ">
+      <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            duration: 0.6,
+            delay: 0.2,
+          }}
+          className=""
+        > <div className="cta_div flex ">
         <div className="">
           <p className="amralux_text_head text-center">Amarlux Realty</p>
           <p className="amralux_text text-center">
@@ -94,6 +138,8 @@ export default function Page({ properties }) {
           </center>
         </div>
       </div>
+          </motion.div>
+     
       <Footer />
     </div>
   );

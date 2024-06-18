@@ -4,6 +4,13 @@ import { createClient } from "contentful";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { fetchEntries } from "../lib/contentful";
+import {
+  AnimatePresence,
+  motion,
+  stagger,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 export default function Blog({ entries }) {
   console.log(entries);
@@ -63,178 +70,270 @@ export default function Blog({ entries }) {
   return (
     <div>
       <Header />
+
       <div className="frame_div">
-        <p className="exclusive_listings text-center">MEDIA & BLOGS</p>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            duration: 0.6,
+            delay: 0.2,
+          }}
+          className=""
+        >
+          {" "}
+          <p className="exclusive_listings text-center">MEDIA & BLOGS</p>
+        </motion.div>
         <div className="frame_div">
-          <p className=" blog_head mb-10">VIDEO GALLERY</p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 10,
+              duration: 0.6,
+              delay: 0.2,
+            }}
+            className=""
+          >
+            {" "}
+            <p className=" blog_head mb-10">VIDEO GALLERY</p>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 mb-20 gap-10 ">
-            <div className="">
-              <div
-                className="wistia_responsive_padding"
-                style={{ padding: "177.78% 0 0 0", position: "relative" }}
-              >
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                duration: 0.6,
+                delay: 0.2,
+              }}
+              className=""
+            >
+              {" "}
+              <div className="">
                 <div
-                  className="wistia_responsive_wrapper"
-                  style={{
-                    height: "90%",
-                    left: 0,
-                    position: "absolute",
-                    top: 0,
-                    width: "100%",
-                  }}
+                  className="wistia_responsive_padding"
+                  style={{ padding: "177.78% 0 0 0", position: "relative" }}
                 >
                   <div
-                    className="wistia_embed wistia_async_kkv8m4suwu seo=true videoFoam=true"
+                    className="wistia_responsive_wrapper"
                     style={{
-                      height: "50%",
-                      position: "relative",
-                      width: "50%",
+                      height: "90%",
+                      left: 0,
+                      position: "absolute",
+                      top: 0,
+                      width: "100%",
                     }}
                   >
                     <div
-                      className="wistia_swatch"
+                      className="wistia_embed wistia_async_kkv8m4suwu seo=true videoFoam=true"
                       style={{
                         height: "50%",
-                        left: 0,
-                        opacity: 0,
-                        overflow: "hidden",
-                        position: "absolute",
-                        top: 0,
-                        transition: "opacity 200ms",
+                        position: "relative",
                         width: "50%",
                       }}
                     >
-                      <img
-                        src="https://fast.wistia.com/embed/medias/kkv8m4suwu/swatch"
+                      <div
+                        className="wistia_swatch"
                         style={{
-                          filter: "blur(5px)",
                           height: "50%",
-                          objectFit: "contain",
+                          left: 0,
+                          opacity: 0,
+                          overflow: "hidden",
+                          position: "absolute",
+                          top: 0,
+                          transition: "opacity 200ms",
                           width: "50%",
                         }}
-                        alt=""
-                        aria-hidden="true"
-                        onLoad={(e) => (e.target.parentNode.style.opacity = 1)}
-                      />
+                      >
+                        <img
+                          src="https://fast.wistia.com/embed/medias/kkv8m4suwu/swatch"
+                          style={{
+                            filter: "blur(5px)",
+                            height: "50%",
+                            objectFit: "contain",
+                            width: "50%",
+                          }}
+                          alt=""
+                          aria-hidden="true"
+                          onLoad={(e) =>
+                            (e.target.parentNode.style.opacity = 1)
+                          }
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="">
-              <div
-                className="wistia_responsive_padding"
-                style={{ padding: "177.78% 0 0 0", position: "relative" }}
-              >
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                duration: 0.6,
+                delay: 0.2,
+              }}
+              className=""
+            >
+              <div className="">
                 <div
-                  className="wistia_responsive_wrapper"
-                  style={{
-                    height: "100%",
-                    left: 0,
-                    position: "absolute",
-                    top: 0,
-                    width: "100%",
-                  }}
+                  className="wistia_responsive_padding"
+                  style={{ padding: "177.78% 0 0 0", position: "relative" }}
                 >
                   <div
-                    className="wistia_embed wistia_async_bv8p16rsnu seo=true videoFoam=true"
+                    className="wistia_responsive_wrapper"
                     style={{
                       height: "100%",
-                      position: "relative",
+                      left: 0,
+                      position: "absolute",
+                      top: 0,
                       width: "100%",
                     }}
                   >
                     <div
-                      className="wistia_swatch"
+                      className="wistia_embed wistia_async_bv8p16rsnu seo=true videoFoam=true"
                       style={{
                         height: "100%",
-                        left: 0,
-                        opacity: 0,
-                        overflow: "hidden",
-                        position: "absolute",
-                        top: 0,
-                        transition: "opacity 200ms",
+                        position: "relative",
                         width: "100%",
                       }}
                     >
-                      <img
-                        src="https://fast.wistia.com/embed/medias/bv8p16rsnu/swatch"
+                      <div
+                        className="wistia_swatch"
                         style={{
-                          filter: "blur(5px)",
                           height: "100%",
-                          objectFit: "contain",
+                          left: 0,
+                          opacity: 0,
+                          overflow: "hidden",
+                          position: "absolute",
+                          top: 0,
+                          transition: "opacity 200ms",
                           width: "100%",
                         }}
-                        alt=""
-                        aria-hidden="true"
-                        onLoad={(e) => (e.target.parentNode.style.opacity = 1)}
-                      />
+                      >
+                        <img
+                          src="https://fast.wistia.com/embed/medias/bv8p16rsnu/swatch"
+                          style={{
+                            filter: "blur(5px)",
+                            height: "100%",
+                            objectFit: "contain",
+                            width: "100%",
+                          }}
+                          alt=""
+                          aria-hidden="true"
+                          onLoad={(e) =>
+                            (e.target.parentNode.style.opacity = 1)
+                          }
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="">
-              <div
-                className="wistia_responsive_padding"
-                style={{ padding: "177.78% 0 0 0", position: "relative" }}
-              >
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                duration: 0.6,
+                delay: 0.2,
+              }}
+              className=""
+            >
+              <div className="">
                 <div
-                  className="wistia_responsive_wrapper"
-                  style={{
-                    height: "100%",
-                    left: 0,
-                    position: "absolute",
-                    top: 0,
-                    width: "100%",
-                  }}
+                  className="wistia_responsive_padding"
+                  style={{ padding: "177.78% 0 0 0", position: "relative" }}
                 >
                   <div
-                    className="wistia_embed wistia_async_jz1dh0ty1g seo=true videoFoam=true"
+                    className="wistia_responsive_wrapper"
                     style={{
                       height: "100%",
-                      position: "relative",
+                      left: 0,
+                      position: "absolute",
+                      top: 0,
                       width: "100%",
                     }}
                   >
                     <div
-                      className="wistia_swatch"
+                      className="wistia_embed wistia_async_jz1dh0ty1g seo=true videoFoam=true"
                       style={{
                         height: "100%",
-                        left: 0,
-                        opacity: 0,
-                        overflow: "hidden",
-                        position: "absolute",
-                        top: 0,
-                        transition: "opacity 200ms",
+                        position: "relative",
                         width: "100%",
                       }}
                     >
-                      <img
-                        src="https://fast.wistia.com/embed/medias/jz1dh0ty1g/swatch"
+                      <div
+                        className="wistia_swatch"
                         style={{
-                          filter: "blur(5px)",
                           height: "100%",
-                          objectFit: "contain",
+                          left: 0,
+                          opacity: 0,
+                          overflow: "hidden",
+                          position: "absolute",
+                          top: 0,
+                          transition: "opacity 200ms",
                           width: "100%",
                         }}
-                        alt=""
-                        aria-hidden="true"
-                        onLoad={(e) => (e.target.parentNode.style.opacity = 1)}
-                      />
+                      >
+                        <img
+                          src="https://fast.wistia.com/embed/medias/jz1dh0ty1g/swatch"
+                          style={{
+                            filter: "blur(5px)",
+                            height: "100%",
+                            objectFit: "contain",
+                            width: "100%",
+                          }}
+                          alt=""
+                          aria-hidden="true"
+                          onLoad={(e) =>
+                            (e.target.parentNode.style.opacity = 1)
+                          }
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-        <center>
-          <Link href="../../contact">
-            <button className="inq_btn mt-20">View More</button>
-          </Link>
-        </center>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            duration: 0.6,
+            delay: 0.2,
+          }}
+          className=""
+        >
+          {" "}
+          <center>
+            <Link href="../../contact">
+              <button className="inq_btn mt-20">View More</button>
+            </Link>
+          </center>
+        </motion.div>
+
         <div className="frame_div">
           <p
             className="  blog_head
@@ -249,22 +348,36 @@ export default function Blog({ entries }) {
                 const entryId = entry.sys.id; // Get the entry ID
                 return (
                   <div key={entryId} className="">
-                    <Link href={`/blog/${entryId}`}>
-                      <div>
-                        {" "}
-                        {/* Use a div wrapper instead of <a> */}
-                        {thumbnail && (
-                          <img
-                            src={thumbnail.fields.file.url}
-                            alt={title}
-                            className="blog_thumbnail"
-                          />
-                        )}
-                        <h3 className="blog_title text-xl font-bold">
-                          {title}
-                        </h3>
-                      </div>
-                    </Link>
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                        duration: 0.6,
+                        delay: 0.2,
+                      }}
+                      className=""
+                    >
+                      {" "}
+                      <Link href={`/blog/${entryId}`}>
+                        <div>
+                          {" "}
+                          {/* Use a div wrapper instead of <a> */}
+                          {thumbnail && (
+                            <img
+                              src={thumbnail.fields.file.url}
+                              alt={title}
+                              className="blog_thumbnail"
+                            />
+                          )}
+                          <h3 className="blog_title text-xl font-bold">
+                            {title}
+                          </h3>
+                        </div>
+                      </Link>
+                    </motion.div>
                   </div>
                 );
               })}
