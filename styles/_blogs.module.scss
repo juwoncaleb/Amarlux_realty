@@ -57,8 +57,10 @@
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .inq_btn:hover {
-  background-color: black;
-  color: white;
+  border: 0px solid black;
+
+  background-color: #f8af3b;
+  color: black;
 }
 .propertt_detali {
   padding-left: 4%;

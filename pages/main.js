@@ -63,7 +63,8 @@ export default function Main() {
                     ut commodo diam libero vitae erat.
                   </p>
                   <Link href="./listings">
-                    <button className="prop_btn">VIEW PROPERTIES</button>
+                  <button className="contact_prop">VIEW PROPERTIES</button>
+
                   </Link>
                 </div>
               </div>
@@ -98,7 +99,7 @@ export default function Main() {
           </div>
         </motion.div>
 
-        <div className="bg-black exclusive_listing">
+        <div className=" exclusive_listing">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -19,7 +19,7 @@ export default function Header() {
   };
 
   return (
-    <div className="mb-6">
+    <div className="mb-6 header_divs">
       
       <div className="flex header_component justify-between">
         <Link href='../../'>
