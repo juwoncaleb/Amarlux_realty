@@ -57,10 +57,7 @@ export default function Main() {
               <div className="header_div mt-10 ">
                 <div className="header_div_sub">
                   <p className="hero_text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse varius enim in eros elementum tristique. Duis
-                    cursus, mi quis viverra ornare, eros dolor interdum nulla,
-                    ut commodo diam libero vitae erat.
+                    Helping you find the perfect home — whether you’re buying, selling, or just exploring your options. 
                   </p>
                   <Link href="./listings">
                   <button className="contact_prop">VIEW PROPERTIES</button>
