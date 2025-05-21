@@ -127,7 +127,7 @@ export default function Main() {
             className=""
           >
             <div className="house_1">
-              <Link href="./property/2">
+              <Link >
                 <img className="property_one" src="./land.jpg" />
                 <div className=" flex justify-end">
                   <div className="price_tag">
@@ -157,7 +157,7 @@ export default function Main() {
             }}
             className=""
           >
-            <Link href="./property/1">
+            <Link >
               <div className="house_2">
                 <img className="property_two" src="./chev.jpg" />
                 <div className=" flex justify-start">
@@ -187,7 +187,7 @@ export default function Main() {
             }}
             className=""
           >
-            <Link href="./property/5">
+            <Link >
               <div className="house_1">
                 <img className="property_three" src="./fine.jpg" />
                 <div className=" flex justify-end">
